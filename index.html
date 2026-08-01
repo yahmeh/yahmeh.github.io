@@ -244,7 +244,16 @@
         .about-card p {
             font-size: 1.08rem;
             color: var(--text-muted);
-            line-height: 1.8;
+            line-height: 1.85;
+            margin-bottom: 0.8rem;
+        }
+
+        .about-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-card strong {
+            color: var(--primary);
         }
 
         /* ----- 2. 과정 소개 섹션 (3D Book Hover & Badge) ----- */
@@ -456,7 +465,7 @@
             line-height: 1.75;
         }
 
-        /* ----- 5. 수강 신청 섹션 (CTA Steps & Button) ----- */
+        /* ----- 5. 수강 신청 섹션 ----- */
         .register-section {
             border-bottom: none;
         }
@@ -566,6 +575,11 @@
             font-weight: 700;
         }
 
+        .footer-email {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+        }
+
         /* ----- Responsive Design ----- */
         @media (max-width: 868px) {
             .nav-links {
@@ -651,12 +665,12 @@
         </div>
     </header>
 
-    <!-- 1. 학교 소개 섹션 (Split Hero Layout & Grid Pattern) -->
+    <!-- 1. 학교 소개 섹션 -->
     <section id="about" class="intro-section bg-grid-pattern">
         <div class="container">
             
             <div class="hero-split">
-                <!-- 좌측 메인 캐치프레이즈 -->
+                <!-- 메인 캐치프레이즈 -->
                 <div class="hero-text-block">
                     <div class="hero-badge-tag">
                         <i class="fa-solid fa-feather"></i> 자발적 미인가 신학교
@@ -670,27 +684,30 @@
                     </a>
                 </div>
 
-                <!-- 우측 사제 비주얼 이미지 (img/junim.png) -->
+                <!-- 사제 비주얼 이미지 (img/junim.png) -->
                 <div class="hero-image-wrapper">
                     <img src="img/junim.png" alt="야매신학교 메인 비주얼">
                 </div>
             </div>
 
-            <!-- 학교 소개 서술 카드 -->
+            <!-- 새로 반영된 학교 소개 서술 카드 -->
             <div class="about-card">
                 <div class="section-header" style="margin-bottom: 15px;">
                     <span class="subtitle">About Yahmeh</span>
                     <h2 class="serif-font">학교 소개</h2>
                 </div>
                 <p>
-                    야매신학교는 자발적 미인가 신학교로, 독실한 신앙인은 아무래도 좀 부담스러우니 대체로 가볍게 신학을 공부하고 싶은 분들을 환영합니다.
+                    야매신학교(Yahmeh Seminary)는 <strong>'야훼'(Yahweh)를 뒤집어 명명한 자발적 미인가 신학교</strong>입니다.
+                </p>
+                <p>
+                    기독교 신학에 흥미가 있으되 기독교 신앙인은 아닌 분들, 그리고 기독교 신학에 흥미가 있는 종교인 분들을 모두 환영합니다.
                 </p>
             </div>
 
         </div>
     </section>
 
-    <!-- 2. 과정 소개 섹션 (3D Book Display & Badge) -->
+    <!-- 2. 과정 소개 섹션 -->
     <section id="curriculum" class="curriculum-section">
         <div class="container">
             
@@ -729,7 +746,7 @@
         </div>
     </section>
 
-    <!-- 3. 3대 원칙 섹션 (Grid Pattern Background) -->
+    <!-- 3. 3대 원칙 섹션 -->
     <section id="principles" class="principles-section bg-grid-pattern">
         <div class="container">
             <div class="section-header" style="text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">
@@ -826,7 +843,7 @@
         </div>
     </section>
 
-    <!-- 5. 수강 신청 섹션 (Step Mini & Banner) -->
+    <!-- 5. 수강 신청 섹션 (yhmhsem@gmail.com 반영) -->
     <section id="register" class="register-section bg-grid-pattern">
         <div class="container">
             <div class="register-banner">
@@ -851,7 +868,8 @@
                     </div>
                     
                     <div>
-                        <a href="mailto:contact@yahmeh.org" class="btn-primary">
+                        <!-- 이메일 주소 yhmhsem@gmail.com 반영 -->
+                        <a href="mailto:yhmhsem@gmail.com" class="btn-primary">
                             <i class="fa-solid fa-paper-plane"></i> 13개월 과정 수강 신청하기
                         </a>
                     </div>
@@ -867,6 +885,9 @@
                 <div class="footer-logo">
                     <img src="img/yhmh_logo.svg" alt="YHMH Logo">
                     <span class="serif-font">야매신학교</span>
+                </div>
+                <div class="footer-email">
+                    <i class="fa-regular fa-envelope"></i> yhmhsem@gmail.com
                 </div>
                 <div>Yahmeh Seminary &copy; All rights reserved.</div>
             </div>
