@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>야매신학교 | Yahmeh Seminary</title>
-    <meta name="description" content="흥미 본위의 신학을 탐구하는 야매신학교 공식 홈페이지입니다.">
+    <meta name="description" content="자발적 미인가 신학교, 가볍게 신학을 탐구하는 야매신학교 공식 홈페이지입니다.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,15 +20,15 @@
             --primary-light: #1e293b;    /* Slate 800 */
             --accent: #b45309;           /* Amber 700 */
             --accent-light: #fef3c7;     /* Amber 100 */
-            --bg-gray: #f8fafc;          /* Slate 50 (밝은 회색) */
-            --bg-white: #ffffff;         /* 순백색 */
+            --bg-gray: #f8fafc;          /* Slate 50 */
+            --bg-white: #ffffff;         /* Pure White */
             --border-color: #e2e8f0;     /* Slate 200 */
             --text-dark: #0f172a;
             --text-muted: #64748b;       /* Slate 500 */
             --white: #ffffff;
             --max-width: 1080px;
             --radius: 12px;
-            --transition: all 0.25s ease;
+            --transition: all 0.3s ease;
         }
 
         * {
@@ -143,10 +143,17 @@
             cursor: pointer;
         }
 
-        /* ----- Section Base ----- */
+        /* ----- Section Base & Paper Texture ----- */
         section {
             padding: 90px 0;
             border-bottom: 1px solid var(--border-color);
+        }
+
+        .bg-grid-pattern {
+            background-color: var(--bg-gray);
+            background-image: 
+                radial-gradient(var(--border-color) 1px, transparent 1px);
+            background-size: 24px 24px;
         }
 
         .section-header {
@@ -169,48 +176,61 @@
             font-weight: 700;
         }
 
-        /* ----- 1. 학교 소개 섹션 (밝은 회색) ----- */
+        /* ----- 1. 학교 소개 섹션 (Split Hero Layout) ----- */
         .intro-section {
-            padding-top: 130px;
-            background-color: var(--bg-gray);
+            padding-top: 140px;
         }
 
-        .hero-banner {
+        .hero-split {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .hero-text-block h1 {
+            font-size: 2.5rem;
+            line-height: 1.35;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+
+        .hero-text-block .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-badge-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--accent-light);
+            color: var(--accent);
+            padding: 0.35rem 0.85rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-image-wrapper {
             position: relative;
             border-radius: var(--radius);
             overflow: hidden;
-            margin-bottom: 40px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             border: 1px solid var(--border-color);
         }
 
-        .hero-banner img {
+        .hero-image-wrapper img {
             width: 100%;
-            height: 400px;
+            height: 380px;
             object-fit: cover;
             display: block;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.4) 60%, transparent 100%);
-            padding: 40px;
-            color: var(--white);
-        }
-
-        .hero-overlay h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-overlay p {
-            font-size: 1rem;
-            color: #cbd5e1;
-            font-weight: 300;
+            transition: var(--transition);
         }
 
         .about-card {
@@ -225,18 +245,9 @@
             font-size: 1.08rem;
             color: var(--text-muted);
             line-height: 1.8;
-            margin-bottom: 0.8rem;
         }
 
-        .about-card p:last-child {
-            margin-bottom: 0;
-        }
-
-        .about-card strong {
-            color: var(--primary);
-        }
-
-        /* ----- 2. 과정 소개 섹션 (순백색) ----- */
+        /* ----- 2. 과정 소개 섹션 (3D Book Hover & Badge) ----- */
         .curriculum-section {
             background-color: var(--bg-white);
         }
@@ -245,34 +256,54 @@
             background-color: var(--bg-gray);
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
-            padding: 40px;
+            padding: 45px;
             display: grid;
-            grid-template-columns: 320px 1fr;
+            grid-template-columns: 360px 1fr;
             gap: 45px;
             align-items: center;
         }
 
         .books-wrapper {
             display: flex;
-            gap: 16px;
+            gap: 20px;
             justify-content: center;
+            perspective: 1000px;
         }
 
         .book-item {
             flex: 1;
             text-align: center;
             background: var(--bg-white);
-            padding: 12px;
+            padding: 14px;
             border-radius: 10px;
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
+            position: relative;
         }
 
         .book-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: rotateY(-8deg) translateY(-8deg);
+            box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.12);
             border-color: #cbd5e1;
+        }
+
+        .book-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary);
+            color: var(--white);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .book-badge.alt {
+            background-color: var(--accent);
         }
 
         .book-item img {
@@ -280,20 +311,21 @@
             height: auto;
             border-radius: 4px;
             display: block;
+            margin-top: 4px;
         }
 
         .book-title {
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             font-weight: 700;
             color: var(--primary);
-            margin-top: 10px;
+            margin-top: 12px;
             line-height: 1.3;
         }
 
         .book-author {
-            font-size: 0.73rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
-            margin-top: 3px;
+            margin-top: 4px;
         }
 
         .curriculum-content p {
@@ -307,11 +339,7 @@
             margin-bottom: 0;
         }
 
-        /* ----- 3. 3대 원칙 섹션 (밝은 회색) ----- */
-        .principles-section {
-            background-color: var(--bg-gray);
-        }
-
+        /* ----- 3. 3대 원칙 섹션 ----- */
         .principles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -359,90 +387,150 @@
             line-height: 1.7;
         }
 
-        /* ----- 4. 자주 묻는 질문 섹션 (순백색) ----- */
+        /* ----- 4. 자주 묻는 질문 섹션 (Accordion UI) ----- */
         .faq-section {
             background-color: var(--bg-white);
         }
 
-        .faq-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
+        .accordion {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        .faq-item {
-            background-color: var(--bg-gray);
+        .accordion-item {
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
-            padding: 1.8rem;
+            background-color: var(--bg-gray);
+            overflow: hidden;
+            transition: var(--transition);
         }
 
-        .faq-question {
-            font-size: 1.1rem;
+        .accordion-header {
+            width: 100%;
+            padding: 20px 24px;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1.05rem;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 0.6rem;
+            cursor: pointer;
             display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            font-family: inherit;
         }
 
-        .faq-question i {
-            color: var(--accent);
-            margin-top: 0.2rem;
-        }
-
-        .faq-answer {
+        .accordion-header i.chevron {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            padding-left: 1.5rem;
+            transition: transform 0.3s ease;
         }
 
-        /* ----- 5. 수강 신청 섹션 (밝은 회색 & 배너) ----- */
+        .accordion-item.active .accordion-header i.chevron {
+            transform: rotate(180deg);
+            color: var(--accent);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+            background-color: var(--bg-white);
+            border-top: 0 solid var(--border-color);
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 300px;
+            border-top-width: 1px;
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        .accordion-body {
+            padding: 20px 24px;
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.75;
+        }
+
+        /* ----- 5. 수강 신청 섹션 (CTA Steps & Button) ----- */
         .register-section {
-            background-color: var(--bg-gray);
             border-bottom: none;
         }
 
         .register-banner {
             background-color: var(--primary);
             color: var(--white);
-            padding: 4rem 3rem;
+            padding: 4rem 3.5rem;
             border-radius: var(--radius);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
             box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.2);
         }
 
-        .register-banner h3 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
+        .register-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 40px;
+            align-items: center;
         }
 
-        .register-banner p {
+        .register-info h3 {
+            font-size: 1.9rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .register-info p {
             color: #94a3b8;
-            font-size: 1rem;
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+
+        .steps-mini {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .step-mini-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.88rem;
+            color: #cbd5e1;
+        }
+
+        .step-mini-num {
+            width: 22px;
+            height: 22px;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: var(--white);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
         }
 
         .btn-primary {
             background-color: var(--accent);
             color: var(--white);
-            padding: 0.85rem 2rem;
+            padding: 1rem 2.2rem;
             border-radius: 8px;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 1rem;
             transition: var(--transition);
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
+            white-space: nowrap;
         }
 
         .btn-primary:hover {
             background-color: #92400e;
+            transform: translateY(-2px);
         }
 
         /* ----- Footer ----- */
@@ -502,16 +590,17 @@
                 display: block;
             }
 
-            .hero-banner img {
+            .hero-split {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .hero-text-block h1 {
+                font-size: 2rem;
+            }
+
+            .hero-image-wrapper img {
                 height: 280px;
-            }
-
-            .hero-overlay {
-                padding: 20px;
-            }
-
-            .hero-overlay h1 {
-                font-size: 1.6rem;
             }
 
             .curriculum-card {
@@ -521,13 +610,20 @@
             }
 
             .books-wrapper {
-                max-width: 300px;
+                max-width: 320px;
                 margin: 0 auto;
             }
 
-            .register-banner {
-                flex-direction: column;
+            .register-grid {
+                grid-template-columns: 1fr;
                 text-align: center;
+            }
+
+            .steps-mini {
+                justify-content: center;
+            }
+
+            .register-banner {
                 padding: 2.5rem 1.5rem;
             }
         }
@@ -555,22 +651,34 @@
         </div>
     </header>
 
-    <!-- 1. 학교 소개 섹션 (밝은 회색) -->
-    <section id="about" class="intro-section">
+    <!-- 1. 학교 소개 섹션 (Split Hero Layout & Grid Pattern) -->
+    <section id="about" class="intro-section bg-grid-pattern">
         <div class="container">
             
-            <!-- 사제 메인 이미지 (img/junim.png) -->
-            <div class="hero-banner">
-                <img src="img/junim.png" alt="야매신학교 메인 비주얼">
-                <div class="hero-overlay">
-                    <h1 class="serif-font">야매신학교에 오신 것을 환영합니다</h1>
-                    <p>Yahmeh Seminary Official Academic Platform</p>
+            <div class="hero-split">
+                <!-- 좌측 메인 캐치프레이즈 -->
+                <div class="hero-text-block">
+                    <div class="hero-badge-tag">
+                        <i class="fa-solid fa-feather"></i> 자발적 미인가 신학교
+                    </div>
+                    <h1 class="serif-font">가볍고 솔직하게<br>신학을 탐구하는 공간</h1>
+                    <p class="hero-desc">
+                        야매신학교는 거창한 인가나 고립된 교리에 갇히지 않고, 신학적 지식이 주는 자유로운 흥미를 모토로 함께 책을 읽고 나눕니다.
+                    </p>
+                    <a href="#curriculum" class="btn-primary" style="display: inline-flex;">
+                        정규과정 둘러보기 <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- 우측 사제 비주얼 이미지 (img/junim.png) -->
+                <div class="hero-image-wrapper">
+                    <img src="img/junim.png" alt="야매신학교 메인 비주얼">
                 </div>
             </div>
 
-            <!-- 학교 소개 카드 -->
+            <!-- 학교 소개 서술 카드 -->
             <div class="about-card">
-                <div class="section-header">
+                <div class="section-header" style="margin-bottom: 15px;">
                     <span class="subtitle">About Yahmeh</span>
                     <h2 class="serif-font">학교 소개</h2>
                 </div>
@@ -582,26 +690,28 @@
         </div>
     </section>
 
-    <!-- 2. 과정 소개 섹션 (순백색) -->
+    <!-- 2. 과정 소개 섹션 (3D Book Display & Badge) -->
     <section id="curriculum" class="curriculum-section">
         <div class="container">
             
             <div class="curriculum-card">
-                <!-- 도서 이미지 영역 -->
+                <!-- 도서 이미지 2종 (img/book.jpg, img/book2.jpg) -->
                 <div class="books-wrapper">
                     <div class="book-item">
+                        <span class="book-badge">주교재</span>
                         <img src="img/book.jpg" alt="한 권으로 배우는 신학교 표지">
                         <div class="book-title">한 권으로 배우는 신학교</div>
                         <div class="book-author">알리스터 맥그래스</div>
                     </div>
                     <div class="book-item">
+                        <span class="book-badge alt">부교재</span>
                         <img src="img/book2.jpg" alt="기독교 조직신학 개론 표지">
                         <div class="book-title">기독교 조직신학 개론</div>
                         <div class="book-author">다니엘 L. 밀리오리</div>
                     </div>
                 </div>
                 
-                <!-- 과정 소개 텍스트 영역 -->
+                <!-- 과정 소개 텍스트 -->
                 <div class="curriculum-content">
                     <div class="section-header">
                         <span class="subtitle">Curriculum</span>
@@ -619,8 +729,8 @@
         </div>
     </section>
 
-    <!-- 3. 3대 원칙 섹션 (밝은 회색) -->
-    <section id="principles" class="principles-section">
+    <!-- 3. 3대 원칙 섹션 (Grid Pattern Background) -->
+    <section id="principles" class="principles-section bg-grid-pattern">
         <div class="container">
             <div class="section-header" style="text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">
                 <span class="subtitle">Core Principles</span>
@@ -652,7 +762,7 @@
         </div>
     </section>
 
-    <!-- 4. 자주 묻는 질문 섹션 (순백색) -->
+    <!-- 4. 자주 묻는 질문 섹션 (Accordion UI) -->
     <section id="faq" class="faq-section">
         <div class="container">
             <div class="section-header" style="text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">
@@ -660,61 +770,92 @@
                 <h2 class="serif-font">자주 묻는 질문</h2>
             </div>
 
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <i class="fa-solid fa-circle-question"></i>
-                        <span>신앙이 없거나 교인 및 신자가 아니어도 참여할 수 있나요?</span>
-                    </div>
-                    <div class="faq-answer">
-                        네, 전혀 상관없습니다. 야매신학교는 무신론자나 타 종교인, 교양 수준에서 신학적 지식에 흥미가 있는 분 등 누구에게나 열려 있습니다.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <i class="fa-solid fa-circle-question"></i>
-                        <span>시험이나 과제가 인가 신학교처럼 과도한가요?</span>
-                    </div>
-                    <div class="faq-answer">
-                        아닙니다. 지식을 평가하는 시험이나 거창한 과제는 없습니다. 매주 정해진 책의 분량을 읽어오시는 것만으로 충분합니다.
+            <div class="accordion">
+                <!-- Item 1 -->
+                <div class="accordion-item active">
+                    <button class="accordion-header">
+                        <span><i class="fa-solid fa-circle-question" style="color: var(--accent); margin-right: 8px;"></i> 신앙이 없거나 교인 및 신자가 아니어도 참여할 수 있나요?</span>
+                        <i class="fa-solid fa-chevron-down chevron"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            네, 전혀 상관없습니다. 야매신학교는 무신론자나 타 종교인, 교양 수준에서 신학적 지식에 흥미가 있는 분 등 누구에게나 열려 있습니다.
+                        </div>
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <i class="fa-solid fa-circle-question"></i>
-                        <span>등록금 1만 원은 어디에 사용되나요?</span>
-                    </div>
-                    <div class="faq-answer">
-                        수강생 여러분이 끝까지 13개월 과정을 완독할 수 있도록 돕는 '동기부여용 장치'이며, 학교의 최소한의 운영 비용으로 쓰입니다.
+                <!-- Item 2 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span><i class="fa-solid fa-circle-question" style="color: var(--accent); margin-right: 8px;"></i> 시험이나 과제가 인가 신학교처럼 과도한가요?</span>
+                        <i class="fa-solid fa-chevron-down chevron"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            아닙니다. 지식을 평가하는 시험이나 거창한 과제는 없습니다. 매주 정해진 책의 분량을 읽어오시는 것만으로 충분합니다.
+                        </div>
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <i class="fa-solid fa-circle-question"></i>
-                        <span>중도에 학업을 그만두게 되면 어떻게 되나요?</span>
+                <!-- Item 3 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span><i class="fa-solid fa-circle-question" style="color: var(--accent); margin-right: 8px;"></i> 등록금 1만 원은 어디에 사용되나요?</span>
+                        <i class="fa-solid fa-chevron-down chevron"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            수강생 여러분이 끝까지 13개월 과정을 완독할 수 있도록 돕는 '동기부여용 장치'이며, 학교의 최소한의 운영 비용으로 쓰입니다.
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        자유롭게 하차하실 수 있습니다. 누구도 정죄하거나 강요하지 않으니 부담 없이 원하는 만큼 탐구하시면 됩니다.
+                </div>
+
+                <!-- Item 4 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span><i class="fa-solid fa-circle-question" style="color: var(--accent); margin-right: 8px;"></i> 중도에 학업을 그만두게 되면 어떻게 되나요?</span>
+                        <i class="fa-solid fa-chevron-down chevron"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            자유롭게 하차하실 수 있습니다. 누구도 정죄하거나 강요하지 않으니 부담 없이 원하는 만큼 탐구하시면 됩니다.
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. 수강 신청 섹션 (밝은 회색) -->
-    <section id="register" class="register-section">
+    <!-- 5. 수강 신청 섹션 (Step Mini & Banner) -->
+    <section id="register" class="register-section bg-grid-pattern">
         <div class="container">
             <div class="register-banner">
-                <div>
-                    <h3 class="serif-font">13개월 정규과정 수강 안내</h3>
-                    <p>참여 신청 및 기타 문의는 이메일로 편하게 연락주세요.</p>
+                <div class="register-grid">
+                    <div class="register-info">
+                        <h3 class="serif-font">13개월 정규과정 수강 신청</h3>
+                        <p>간단한 이메일 문의로 13개월 읽기 모임에 참여해 보세요.</p>
+                        
+                        <div class="steps-mini">
+                            <div class="step-mini-item">
+                                <span class="step-mini-num">1</span> 이메일 문의
+                            </div>
+                            <i class="fa-solid fa-angle-right" style="color: rgba(255,255,255,0.3);"></i>
+                            <div class="step-mini-item">
+                                <span class="step-mini-num">2</span> 안내 수신
+                            </div>
+                            <i class="fa-solid fa-angle-right" style="color: rgba(255,255,255,0.3);"></i>
+                            <div class="step-mini-item">
+                                <span class="step-mini-num">3</span> 13개월 읽기 시작
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <a href="mailto:contact@yahmeh.org" class="btn-primary">
+                            <i class="fa-solid fa-paper-plane"></i> 13개월 과정 수강 신청하기
+                        </a>
+                    </div>
                 </div>
-                <a href="mailto:contact@yahmeh.org" class="btn-primary">
-                    <i class="fa-solid fa-envelope"></i> 수강 문의하기
-                </a>
             </div>
         </div>
     </section>
@@ -732,8 +873,9 @@
         </div>
     </footer>
 
-    <!-- Interactive Script -->
+    <!-- Interactive Scripts -->
     <script>
+        // Mobile Nav Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
 
@@ -747,6 +889,26 @@
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
                 mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            });
+        });
+
+        // FAQ Accordion Toggle
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Close all accordion items
+                document.querySelectorAll('.accordion-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+
+                // Toggle selected item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
             });
         });
     </script>
