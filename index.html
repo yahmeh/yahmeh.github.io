@@ -83,24 +83,23 @@
         }
 
         .logo {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary);
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.75rem;
         }
 
-        .logo i {
-            color: var(--accent);
-            font-size: 1.2rem;
+        .logo-img {
+            height: 32px;
+            width: auto;
+            display: block;
         }
 
-        .logo span.en {
-            font-size: 0.85rem;
-            font-weight: 400;
-            color: var(--text-muted);
-            margin-left: 0.2rem;
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            border-left: 1px solid var(--border-color);
+            padding-left: 0.75rem;
         }
 
         .nav-links {
@@ -168,7 +167,7 @@
             font-weight: 700;
         }
 
-        /* ----- Intro Section (Hero Banner with junim.png) ----- */
+        /* ----- Intro Section ----- */
         .intro-section {
             padding-top: 130px;
         }
@@ -372,8 +371,19 @@
         }
 
         .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-logo img {
+            height: 28px;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-logo span {
             color: var(--white);
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 700;
         }
 
@@ -440,9 +450,9 @@
     <header>
         <div class="container nav-container">
             <a href="#" class="logo">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <span>야매신학교</span>
-                <span class="en">Yahmeh Seminary</span>
+                <!-- img/yhmh_logo.svg 경로 반영 -->
+                <img src="img/yhmh_logo.svg" alt="YHMH Logo" class="logo-img">
+                <span class="logo-text serif-font">야매신학교</span>
             </a>
             <button class="mobile-toggle" id="mobileMenuBtn" aria-label="메뉴 열기">
                 <i class="fa-solid fa-bars"></i>
@@ -459,7 +469,7 @@
     <section id="intro" class="intro-section">
         <div class="container">
             
-            <!-- 사제 히로 이미지 (img/junim.png) -->
+            <!-- 사제 메인 이미지 (img/junim.png) -->
             <div class="hero-banner">
                 <img src="img/junim.png" alt="야매신학교 메인 비주얼">
                 <div class="hero-overlay">
@@ -539,7 +549,10 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo serif-font">야매신학교</div>
+                <div class="footer-logo">
+                    <img src="img/yhmh_logo.svg" alt="YHMH Logo">
+                    <span class="serif-font">야매신학교</span>
+                </div>
                 <div>Yahmeh Seminary &copy; All rights reserved.</div>
             </div>
             <div class="footer-bottom">
