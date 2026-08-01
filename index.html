@@ -4,329 +4,567 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>야매신학교 | Yahmeh Seminary</title>
+    <meta name="description" content="흥미 본위의 신학을 탐구하는 야매신학교 공식 홈페이지입니다.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Pretendard:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg-page: #f4f5f7;
-            --bg-paper: #ffffff;
-            --border-color: #d1d5db;
-            --border-light: #e5e7eb;
-            --text-primary: #1f2937;
-            --text-secondary: #4b5563;
-            --text-muted: #6b7280;
-            --navy-academic: #1e293b;
-            --accent-gold: #9a3412;
+            --primary: #0f172a;          /* Slate 900 */
+            --primary-light: #1e293b;    /* Slate 800 */
+            --accent: #b45309;           /* Amber 700 */
+            --accent-light: #fef3c7;     /* Amber 100 */
+            --bg-light: #f8fafc;         /* Slate 50 */
+            --border-color: #e2e8f0;     /* Slate 200 */
+            --text-dark: #0f172a;
+            --text-muted: #64748b;       /* Slate 500 */
+            --white: #ffffff;
+            --max-width: 1080px;
+            --radius: 12px;
+            --transition: all 0.25s ease;
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--bg-page);
-            color: var(--text-primary);
-            font-family: 'Pretendard', -apple-system, sans-serif;
-            font-size: 14px;
-            line-height: 1.6;
-            padding: 40px 15px;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.7;
+            word-break: keep-all;
         }
 
-        /* 2000s Academic Frame Structure */
-        .academic-container {
-            max-width: 820px;
-            margin: 0 auto;
-            background-color: var(--bg-paper);
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Header Bar */
-        header {
-            border-bottom: 2px solid var(--navy-academic);
-            text-align: center;
-            padding: 35px 40px 25px 40px;
-        }
-
-        .header-title-kr {
+        h1, h2, h3, .serif-font {
             font-family: 'Noto Serif KR', serif;
-            font-size: 2.1rem;
-            font-weight: 700;
-            color: var(--navy-academic);
-            letter-spacing: -0.5px;
-            margin-bottom: 4px;
         }
 
-        .header-title-en {
-            font-family: 'Noto Serif KR', serif;
-            font-size: 0.9rem;
-            color: var(--accent-gold);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        /* Nav Bar */
-        nav {
-            background-color: #f8fafc;
-            border-bottom: 1px solid var(--border-light);
-            text-align: center;
-            padding: 10px 0;
-            font-size: 0.85rem;
-        }
-
-        nav a {
-            color: var(--text-secondary);
+        a {
             text-decoration: none;
-            padding: 0 14px;
-            font-weight: 500;
+            color: inherit;
         }
 
-        nav a:hover {
-            color: var(--accent-gold);
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
         }
 
-        nav .divider {
-            color: #d1d5db;
-        }
-
-        /* Main Content */
-        main {
-            padding: 35px 40px;
-        }
-
-        /* Section Styling */
-        .section-block {
-            margin-bottom: 35px;
-        }
-
-        .section-title {
-            font-family: 'Noto Serif KR', serif;
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--navy-academic);
+        /* ----- Header & Navigation ----- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 6px;
-            margin-bottom: 16px;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 0.6rem;
         }
 
-        .section-title::before {
-            content: "■";
-            font-size: 0.75rem;
-            color: var(--accent-gold);
+        .logo i {
+            color: var(--accent);
+            font-size: 1.2rem;
         }
 
-        /* Main Hero Image ('소개' 위 위치) */
-        .main-hero-img {
+        .logo span.en {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-left: 0.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn-cta-nav {
+            background-color: var(--primary);
+            color: var(--white) !important;
+            padding: 0.55rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .btn-cta-nav:hover {
+            background-color: var(--accent);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* ----- Sections Common ----- */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+        }
+
+        .section-header .subtitle {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.4rem;
+            display: block;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* ----- Intro Section (Hero Banner with junim.png) ----- */
+        .intro-section {
+            padding-top: 130px;
+        }
+
+        .hero-banner {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-bottom: 50px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+        }
+
+        .hero-banner img {
             width: 100%;
-            max-height: 320px;
+            height: 400px;
             object-fit: cover;
             display: block;
-            border: 1px solid var(--border-color);
-            margin-bottom: 20px;
         }
 
-        /* Intro Box with Book Image */
-        .intro-box {
-            background-color: #f8fafc;
-            border: 1px solid var(--border-light);
-            border-left: 3px solid var(--navy-academic);
-            padding: 20px;
-            display: flex;
-            gap: 20px;
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.4) 60%, transparent 100%);
+            padding: 40px;
+            color: var(--white);
+        }
+
+        .hero-overlay h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-overlay p {
+            font-size: 1rem;
+            color: #cbd5e1;
+            font-weight: 300;
+        }
+
+        /* Intro Card with book.jpg */
+        .intro-card {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 40px;
             align-items: center;
         }
 
-        .book-img {
-            width: 110px;
-            height: auto;
-            border: 1px solid var(--border-color);
-            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
-            flex-shrink: 0;
+        .book-wrapper {
+            text-align: center;
         }
 
-        .intro-text {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
+        .book-wrapper img {
+            width: 100%;
+            max-width: 180px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+        }
+
+        .book-wrapper img:hover {
+            transform: translateY(-4px);
+        }
+
+        .intro-content h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .intro-content p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .intro-content strong {
+            color: var(--primary);
+        }
+
+        /* ----- Principles Section ----- */
+        .principles-section {
+            background-color: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2.2rem;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.05);
+            border-color: #cbd5e1;
+        }
+
+        .card-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent);
+            background-color: var(--accent-light);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            width: fit-content;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
             line-height: 1.7;
         }
 
-        /* Principles Grid Table */
-        .principles-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+        /* ----- Registration Section ----- */
+        .register-banner {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 4rem 3rem;
+            border-radius: var(--radius);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.2);
         }
 
-        .principle-card {
-            background-color: #fafafa;
-            border: 1px solid var(--border-light);
-            padding: 16px;
+        .register-banner h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
         }
 
-        .principle-num {
-            font-family: 'Noto Serif KR', serif;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--accent-gold);
-            margin-bottom: 4px;
+        .register-banner p {
+            color: #94a3b8;
+            font-size: 1rem;
         }
 
-        .principle-head {
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 0.85rem 2rem;
+            border-radius: 8px;
             font-weight: 600;
             font-size: 0.95rem;
-            color: var(--navy-academic);
-            margin-bottom: 8px;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .principle-body {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
+        .btn-primary:hover {
+            background-color: #92400e;
         }
 
-        /* Registration Box */
-        .register-box {
-            border: 1px solid var(--border-color);
-            background-color: #f8fafc;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .btn-academic {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 7px 18px;
-            background-color: var(--navy-academic);
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border-radius: 2px;
-            transition: background-color 0.2s;
-        }
-
-        .btn-academic:hover {
-            background-color: var(--accent-gold);
-        }
-
-        /* Footer */
+        /* ----- Footer ----- */
         footer {
-            border-top: 1px solid var(--border-color);
-            background-color: #f8fafc;
-            padding: 20px 40px;
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--text-muted);
+            background-color: var(--primary);
+            color: #94a3b8;
+            padding: 50px 0 30px 0;
+            font-size: 0.88rem;
         }
 
-        /* Responsive Adjustment */
-        @media (max-width: 640px) {
-            body { padding: 10px 5px; }
-            header, main, footer { padding-left: 20px; padding-right: 20px; }
-            .intro-box { flex-direction: column; text-align: center; }
-            .book-img { margin: 0 auto; }
-            .principles-grid { grid-template-columns: 1fr; }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--primary-light);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .footer-logo {
+            color: var(--white);
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.82rem;
+            color: #64748b;
+        }
+
+        /* ----- Responsive Design ----- */
+        @media (max-width: 868px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                border-bottom: 1px solid var(--border-color);
+                gap: 1.25rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero-banner img {
+                height: 280px;
+            }
+
+            .hero-overlay {
+                padding: 20px;
+            }
+
+            .hero-overlay h1 {
+                font-size: 1.6rem;
+            }
+
+            .intro-card {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 25px;
+                text-align: center;
+            }
+
+            .register-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 2.5rem 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="academic-container">
-
-    <!-- Header -->
+    <!-- Header / Navigation -->
     <header>
-        <h1 class="header-title-kr">야매신학교</h1>
-        <div class="header-title-en">Yahmeh Seminary</div>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>야매신학교</span>
+                <span class="en">Yahmeh Seminary</span>
+            </a>
+            <button class="mobile-toggle" id="mobileMenuBtn" aria-label="메뉴 열기">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <nav class="nav-links" id="navLinks">
+                <a href="#intro">학교 소개</a>
+                <a href="#principles">3대 원칙</a>
+                <a href="#register" class="btn-cta-nav">수강 신청</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Navigation -->
-    <nav>
-        <a href="#intro">학교소개</a>
-        <span class="divider">|</span>
-        <a href="#principles">운영원칙</a>
-        <span class="divider">|</span>
-        <a href="#register">등록안내</a>
-    </nav>
-
-    <!-- Main Body -->
-    <main>
-
-        <!-- Intro Section -->
-        <section class="section-block" id="intro">
-            <!-- 사제 메인 이미지 ('소개' 바로 위) -->
-            <img src="img/junim.png" alt="야매신학교 메인 이미지" class="main-hero-img">
-
-            <h2 class="section-title">소개</h2>
-            <div class="intro-box">
-                <!-- 교재 이미지 -->
-                <img src="img/book.jpg" alt="한 권으로 배우는 신학교 교재 표지" class="book-img">
-                <div class="intro-text">
-                    야매신학교(Yahmeh Seminary)에 오신 것을 환영합니다.<br><br>
-                    현재 야매신학교는 13개월에 걸쳐, <strong>"한 권으로 배우는 신학교"</strong>를 읽는 과정을 정규과정으로 운영하고 있습니다.
+    <!-- Intro Section -->
+    <section id="intro" class="intro-section">
+        <div class="container">
+            
+            <!-- 사제 히로 이미지 (img/junim.png) -->
+            <div class="hero-banner">
+                <img src="img/junim.png" alt="야매신학교 메인 비주얼">
+                <div class="hero-overlay">
+                    <h1 class="serif-font">야매신학교에 오신 것을 환영합니다</h1>
+                    <p>Yahmeh Seminary Official Academic Platform</p>
                 </div>
             </div>
-        </section>
 
-        <!-- Principles Section -->
-        <section class="section-block" id="principles">
-            <h2 class="section-title">야매신학교 3대 원칙</h2>
+            <!-- 소개 문구 및 교재 이미지 (img/book.jpg) -->
+            <div class="intro-card">
+                <div class="book-wrapper">
+                    <img src="img/book.jpg" alt="한 권으로 배우는 신학교 교재 표지">
+                </div>
+                <div class="intro-content">
+                    <div class="section-header" style="margin-bottom: 12px;">
+                        <span class="subtitle">Curriculum</span>
+                        <h2 class="serif-font">정규과정 안내</h2>
+                    </div>
+                    <p>
+                        현재 야매신학교는 13개월에 걸쳐, <strong>"한 권으로 배우는 신학교"</strong>를 읽는 과정을 정규과정으로 운영하고 있습니다.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Principles Section -->
+    <section id="principles" class="principles-section">
+        <div class="container">
+            <div class="section-header" style="text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <span class="subtitle">Core Principles</span>
+                <h2 class="serif-font">야매신학교 3대 원칙</h2>
+            </div>
+
             <div class="principles-grid">
-                
-                <div class="principle-card">
-                    <div class="principle-num">RULE 01</div>
-                    <div class="principle-head">미인가 & 흥미 본위</div>
-                    <div class="principle-body">
-                        본 신학교는 인가받지 않은 곳으로, 인가받을 생각도 없습니다. 기본적으로 흥미 본위의 신학을 추구합니다.
-                    </div>
+                <!-- Card 1 -->
+                <div class="card">
+                    <span class="card-tag">RULE 01</span>
+                    <h3 class="serif-font">미인가 & 흥미 본위</h3>
+                    <p>본 신학교는 인가받지 않은 곳으로, 인가받을 생각도 없습니다. 기본적으로 흥미 본위의 신학을 추구합니다.</p>
                 </div>
 
-                <div class="principle-card">
-                    <div class="principle-num">RULE 02</div>
-                    <div class="principle-head">신앙의 자유와 존중</div>
-                    <div class="principle-body">
-                        신앙은 각자 알아서 합시다. 뭘 믿든 말든 개인의 자유를 존중합니다. 마찬가지로 다른 사람의 신앙을 절하하지 않습니다.
-                    </div>
+                <!-- Card 2 -->
+                <div class="card">
+                    <span class="card-tag">RULE 02</span>
+                    <h3 class="serif-font">신앙의 자유와 존중</h3>
+                    <p>신앙은 각자 알아서 합시다. 뭘 믿든 말든 개인의 자유를 존중합니다. 마찬가지로 다른 사람의 신앙을 절하하지 않습니다.</p>
                 </div>
 
-                <div class="principle-card">
-                    <div class="principle-num">RULE 03</div>
-                    <div class="principle-head">등록금 (월 1만 원)</div>
-                    <div class="principle-body">
-                        등록금은 월 1만 원입니다. 이는 중도 하차를 방지하기 위한 최소한의 동기 부여를 위함입니다.
-                    </div>
+                <!-- Card 3 -->
+                <div class="card">
+                    <span class="card-tag">RULE 03</span>
+                    <h3 class="serif-font">월 1만 원의 동기부여</h3>
+                    <p>등록금은 월 1만 원입니다. 이는 중도 하차를 방지하기 위한 최소한의 동기 부여를 위함입니다.</p>
                 </div>
-
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Registration Section -->
-        <section class="section-block" id="register" style="margin-bottom: 0;">
-            <h2 class="section-title">수강 등록 안내</h2>
-            <div class="register-box">
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">
-                    13개월 과정 참여 및 문의사항은 아래 연락처로 문의해 주시기 바랍니다.
-                </p>
-                <a href="mailto:yhmhsem@gmail.com" class="btn-academic">✉ 이메일 수강 문의</a>
+    <!-- Registration Section -->
+    <section id="register" class="register-section">
+        <div class="container">
+            <div class="register-banner">
+                <div>
+                    <h3 class="serif-font">13개월 정규과정 수강 안내</h3>
+                    <p>참여 신청 및 기타 문의는 이메일로 편하게 연락주세요.</p>
+                </div>
+                <a href="mailto:contact@yahmeh.org" class="btn-primary">
+                    <i class="fa-solid fa-envelope"></i> 수강 문의하기
+                </a>
             </div>
-        </section>
-
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; Yahmeh Seminary. All rights reserved.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo serif-font">야매신학교</div>
+                <div>Yahmeh Seminary &copy; All rights reserved.</div>
+            </div>
+            <div class="footer-bottom">
+                <p>본 웹사이트는 GitHub Pages를 통해 정적으로 호스팅됩니다.</p>
+            </div>
+        </div>
     </footer>
 
-</div>
+    <!-- Interactive Script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
 
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const isOpen = navLinks.classList.contains('active');
+            mobileMenuBtn.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            });
+        });
+    </script>
 </body>
 </html>
