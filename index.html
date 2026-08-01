@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>야매신학교 | Yahmeh Seminary</title>
     
-    <!-- Google Fonts: 학술적인 느낌을 주는 KoPub Batang 계열 및 깔끔한 Pretendard -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Pretendard:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
             padding: 40px 15px;
         }
 
-        /* 2000년대 학술 저널/연구소 스타일의 프레임 구조 */
+        /* 2000s Academic Frame Structure */
         .academic-container {
             max-width: 820px;
             margin: 0 auto;
@@ -47,16 +47,28 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
-        /* Header Bar */
+        /* Header Bar with Hero Image */
         header {
-            padding: 45px 40px 30px 40px;
             border-bottom: 2px solid var(--navy-academic);
             text-align: center;
+            overflow: hidden;
+        }
+
+        .header-hero-img {
+            width: 100%;
+            max-height: 320px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .header-text-block {
+            padding: 30px 40px 25px 40px;
         }
 
         .header-title-kr {
             font-family: 'Noto Serif KR', serif;
-            font-size: 2rem;
+            font-size: 2.1rem;
             font-weight: 700;
             color: var(--navy-academic);
             letter-spacing: -0.5px;
@@ -71,7 +83,7 @@
             text-transform: uppercase;
         }
 
-        /* Nav (2000s Classic Menu Divider) */
+        /* Nav Bar */
         nav {
             background-color: #f8fafc;
             border-bottom: 1px solid var(--border-light);
@@ -124,18 +136,32 @@
             color: var(--accent-gold);
         }
 
-        /* Notice / Intro Box */
+        /* Intro Box with Book Image */
         .intro-box {
             background-color: #f8fafc;
             border: 1px solid var(--border-light);
             border-left: 3px solid var(--navy-academic);
-            padding: 18px 20px;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .book-img {
+            width: 110px;
+            height: auto;
+            border: 1px solid var(--border-color);
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+        }
+
+        .intro-text {
             font-size: 0.95rem;
             color: var(--text-secondary);
             line-height: 1.7;
         }
 
-        /* Principles Grid Table (2000s Journal Style) */
+        /* Principles Grid Table */
         .principles-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -204,10 +230,12 @@
             color: var(--text-muted);
         }
 
-        /* Responsive */
+        /* Responsive Adjustment */
         @media (max-width: 640px) {
             body { padding: 10px 5px; }
             header, main, footer { padding-left: 20px; padding-right: 20px; }
+            .intro-box { flex-direction: column; text-align: center; }
+            .book-img { margin: 0 auto; }
             .principles-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -218,8 +246,12 @@
 
     <!-- Header -->
     <header>
-        <h1 class="header-title-kr">야매신학교</h1>
-        <div class="header-title-en">Yahmeh Seminary</div>
+        <!-- 사제 그림 (상단 메인 이미지) -->
+        <img src="img/junim.jpg" alt="야매신학교 메인 이미지" class="header-hero-img">
+        <div class="header-text-block">
+            <h1 class="header-title-kr">야매신학교</h1>
+            <div class="header-title-en">Yahmeh Seminary</div>
+        </div>
     </header>
 
     <!-- Navigation -->
@@ -227,7 +259,7 @@
         <a href="#intro">학교소개</a>
         <span class="divider">|</span>
         <a href="#principles">운영원칙</a>
-        <a href="#principles" class="divider">|</a>
+        <span class="divider">|</span>
         <a href="#register">등록안내</a>
     </nav>
 
@@ -238,8 +270,12 @@
         <section class="section-block" id="intro">
             <h2 class="section-title">소개</h2>
             <div class="intro-box">
-                야매신학교(Yahmeh Seminary)에 오신 것을 환영합니다.<br>
-                현재 야매신학교는 13개월에 걸쳐, <strong>"한 권으로 배우는 신학교"</strong>를 읽는 과정을 정규과정으로 운영하고 있습니다.
+                <!-- 교재 이미지 -->
+                <img src="img/book.jpg" alt="한 권으로 배우는 신학교 교재 표지" class="book-img">
+                <div class="intro-text">
+                    야매신학교(Yahmeh Seminary)에 오신 것을 환영합니다.<br><br>
+                    현재 야매신학교는 13개월에 걸쳐, <strong>"한 권으로 배우는 신학교"</strong>를 읽는 과정을 정규과정으로 운영하고 있습니다.
+                </div>
             </div>
         </section>
 
