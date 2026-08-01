@@ -148,7 +148,7 @@
         }
 
         .section-header {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .section-header .subtitle {
@@ -167,16 +167,17 @@
             font-weight: 700;
         }
 
-        /* ----- Intro Section ----- */
+        /* ----- Intro Section (학교 소개) ----- */
         .intro-section {
             padding-top: 130px;
+            padding-bottom: 60px;
         }
 
         .hero-banner {
             position: relative;
             border-radius: var(--radius);
             overflow: hidden;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
             border: 1px solid var(--border-color);
         }
@@ -210,12 +211,40 @@
             font-weight: 300;
         }
 
-        /* Intro Card with Natural Book Display */
-        .intro-card {
+        .about-card {
             background-color: var(--bg-light);
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
-            padding: 45px;
+            padding: 40px;
+        }
+
+        .about-card p {
+            font-size: 1.08rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+        }
+
+        .about-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-card strong {
+            color: var(--primary);
+        }
+
+        /* ----- Curriculum Section (과정 소개) ----- */
+        .curriculum-section {
+            background-color: var(--white);
+            border-top: 1px solid var(--border-color);
+            padding-top: 80px;
+        }
+
+        .curriculum-card {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 40px;
             display: grid;
             grid-template-columns: 320px 1fr;
             gap: 45px;
@@ -266,19 +295,15 @@
             margin-top: 3px;
         }
 
-        .intro-content p {
+        .curriculum-content p {
             font-size: 1.05rem;
             color: var(--text-muted);
             line-height: 1.8;
             margin-bottom: 1rem;
         }
 
-        .intro-content p:last-child {
+        .curriculum-content p:last-child {
             margin-bottom: 0;
-        }
-
-        .intro-content strong {
-            color: var(--primary);
         }
 
         /* ----- Principles Section ----- */
@@ -485,7 +510,7 @@
                 font-size: 1.6rem;
             }
 
-            .intro-card {
+            .curriculum-card {
                 grid-template-columns: 1fr;
                 gap: 30px;
                 padding: 25px;
@@ -517,7 +542,8 @@
                 <i class="fa-solid fa-bars"></i>
             </button>
             <nav class="nav-links" id="navLinks">
-                <a href="#intro">학교 소개</a>
+                <a href="#about">학교 소개</a>
+                <a href="#curriculum">과정 소개</a>
                 <a href="#principles">3대 원칙</a>
                 <a href="#faq">자주 묻는 질문</a>
                 <a href="#register" class="btn-cta-nav">수강 신청</a>
@@ -525,8 +551,8 @@
         </div>
     </header>
 
-    <!-- Intro Section -->
-    <section id="intro" class="intro-section">
+    <!-- 1. 학교 소개 섹션 -->
+    <section id="about" class="intro-section">
         <div class="container">
             
             <!-- 사제 메인 이미지 (img/junim.png) -->
@@ -538,8 +564,26 @@
                 </div>
             </div>
 
-            <!-- 수정된 소개 문구 및 교재 카드 2종 (img/book.jpg, img/book2.jpg) -->
-            <div class="intro-card">
+            <!-- 학교 소개 카드 -->
+            <div class="about-card">
+                <div class="section-header">
+                    <span class="subtitle">About Yahmeh</span>
+                    <h2 class="serif-font">학교 소개</h2>
+                </div>
+                <p>
+                    야매신학교는 자발적 미인가 신학교로, 독실한 신앙인은 아무래도 좀 부담스러우니 대체로 가볍게 신학을 공부하고 싶은 분들을 환영합니다.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 2. 과정 소개 섹션 -->
+    <section id="curriculum" class="curriculum-section">
+        <div class="container">
+            
+            <div class="curriculum-card">
+                <!-- 도서 이미지 영역 -->
                 <div class="books-wrapper">
                     <div class="book-item">
                         <img src="img/book.jpg" alt="한 권으로 배우는 신학교 표지">
@@ -552,17 +596,18 @@
                         <div class="book-author">다니엘 L. 밀리오리</div>
                     </div>
                 </div>
-                <div class="intro-content">
-                    <div class="section-header" style="margin-bottom: 12px;">
-                        <span class="subtitle">About Yahmeh</span>
-                        <h2 class="serif-font">학교 소개 및 과정 안내</h2>
+                
+                <!-- 과정 소개 텍스트 영역 -->
+                <div class="curriculum-content">
+                    <div class="section-header">
+                        <span class="subtitle">Curriculum</span>
+                        <h2 class="serif-font">정규과정 안내</h2>
                     </div>
-                    <!-- 수정된 요청 문구 -->
                     <p>
-                        야매신학교는 자발적 미인가 신학교로, 알리스터 맥그래스(Alister McGrath)의 <strong>『한 권으로 배우는 신학교』</strong>를 다니엘 L. 밀리오리(Daniel L. Migliore)의 <strong>『기독교 조직신학 개론』</strong>과 더불어 읽는 곳입니다.
+                        현재 <strong>13개월에 걸친 정규과정</strong>을 운영하고 있습니다.
                     </p>
                     <p>
-                        현재 13개월에 걸친 정규과정을 운영하고 있으며, 독실한 신앙인은 아무래도 좀 부담스러우니 대체로 가볍게 신학을 공부하고 싶은 분들을 환영합니다.
+                        알리스터 맥그래스(Alister McGrath)의 <strong>『한 권으로 배우는 신학교』</strong>를 다니엘 L. 밀리오리(Daniel L. Migliore)의 <strong>『기독교 조직신학 개론』</strong>과 더불어 함께 읽어나갑니다.
                     </p>
                 </div>
             </div>
@@ -570,7 +615,7 @@
         </div>
     </section>
 
-    <!-- Principles Section -->
+    <!-- 3. Principles Section -->
     <section id="principles" class="principles-section">
         <div class="container">
             <div class="section-header" style="text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">
@@ -603,7 +648,7 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- 4. FAQ Section -->
     <section id="faq" class="faq-section">
         <div class="container">
             <div class="section-header" style="text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">
@@ -655,7 +700,7 @@
         </div>
     </section>
 
-    <!-- Registration Section -->
+    <!-- 5. Registration Section -->
     <section id="register" class="register-section">
         <div class="container">
             <div class="register-banner">
