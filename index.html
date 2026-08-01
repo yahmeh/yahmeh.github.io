@@ -250,6 +250,11 @@
             font-size: 1.05rem;
             color: var(--text-muted);
             line-height: 1.8;
+            margin-bottom: 0.8rem;
+        }
+
+        .intro-content p:last-child {
+            margin-bottom: 0;
         }
 
         .intro-content strong {
@@ -355,7 +360,7 @@
         footer {
             background-color: var(--primary);
             color: #94a3b8;
-            padding: 50px 0 30px 0;
+            padding: 40px 0;
             font-size: 0.88rem;
         }
 
@@ -363,9 +368,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--primary-light);
-            padding-bottom: 30px;
-            margin-bottom: 30px;
             flex-wrap: wrap;
             gap: 1.5rem;
         }
@@ -385,12 +387,6 @@
             color: var(--white);
             font-size: 1.15rem;
             font-weight: 700;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            font-size: 0.82rem;
-            color: #64748b;
         }
 
         /* ----- Responsive Design ----- */
@@ -450,7 +446,6 @@
     <header>
         <div class="container nav-container">
             <a href="#" class="logo">
-                <!-- img/yhmh_logo.svg 경로 반영 -->
                 <img src="img/yhmh_logo.svg" alt="YHMH Logo" class="logo-img">
                 <span class="logo-text serif-font">야매신학교</span>
             </a>
@@ -485,11 +480,14 @@
                 </div>
                 <div class="intro-content">
                     <div class="section-header" style="margin-bottom: 12px;">
-                        <span class="subtitle">Curriculum</span>
-                        <h2 class="serif-font">정규과정 안내</h2>
+                        <span class="subtitle">About Yahmeh</span>
+                        <h2 class="serif-font">학교 소개 및 과정 안내</h2>
                     </div>
                     <p>
-                        현재 야매신학교는 13개월에 걸쳐, <strong>"한 권으로 배우는 신학교"</strong>를 읽는 과정을 정규과정으로 운영하고 있습니다.
+                        야매신학교는 미인가 신학교로, 알리스터 맥그래스(Alister McGrath)의 <strong>『한 권으로 배우는 신학교』</strong>를 중심으로 다니엘 L. 밀리오리(Daniel L. Migliore)의 <strong>『기독교 조직신학 개론』</strong>을 읽는 곳입니다.
+                    </p>
+                    <p>
+                        현재 13개월에 걸친 정규과정을 운영하고 있으며, 독실한 신앙인은 아무래도 좀 부담스러우니 대체로 가볍게 신학을 공부하고 싶은 분들을 환영합니다.
                     </p>
                 </div>
             </div>
@@ -554,9 +552,6 @@
                     <span class="serif-font">야매신학교</span>
                 </div>
                 <div>Yahmeh Seminary &copy; All rights reserved.</div>
-            </div>
-            <div class="footer-bottom">
-                <p>본 웹사이트는 GitHub Pages를 통해 정적으로 호스팅됩니다.</p>
             </div>
         </div>
     </footer>
