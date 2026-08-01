@@ -210,60 +210,67 @@
             font-weight: 300;
         }
 
-        /* Intro Card with 2 Books */
+        /* Intro Card with Natural Book Display */
         .intro-card {
             background-color: var(--bg-light);
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
-            padding: 40px;
+            padding: 45px;
             display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 40px;
+            grid-template-columns: 320px 1fr;
+            gap: 45px;
             align-items: center;
         }
 
         .books-wrapper {
             display: flex;
-            gap: 15px;
+            gap: 16px;
             justify-content: center;
         }
 
         .book-item {
             flex: 1;
             text-align: center;
+            background: var(--white);
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .book-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: #cbd5e1;
         }
 
         .book-item img {
             width: 100%;
             height: auto;
-            border-radius: 8px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
-            transition: var(--transition);
+            border-radius: 4px;
+            display: block;
         }
 
-        .book-item img:hover {
-            transform: translateY(-4px);
-        }
-
-        .book-caption {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            margin-top: 8px;
-            font-weight: 500;
-        }
-
-        .intro-content h3 {
-            font-size: 1.5rem;
+        .book-title {
+            font-size: 0.82rem;
+            font-weight: 700;
             color: var(--primary);
-            margin-bottom: 1rem;
-            line-height: 1.4;
+            margin-top: 10px;
+            line-height: 1.3;
+        }
+
+        .book-author {
+            font-size: 0.73rem;
+            color: var(--text-muted);
+            margin-top: 3px;
         }
 
         .intro-content p {
             font-size: 1.05rem;
             color: var(--text-muted);
             line-height: 1.8;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
         }
 
         .intro-content p:last-child {
@@ -480,13 +487,12 @@
 
             .intro-card {
                 grid-template-columns: 1fr;
-                gap: 25px;
+                gap: 30px;
                 padding: 25px;
-                text-align: center;
             }
 
             .books-wrapper {
-                max-width: 260px;
+                max-width: 300px;
                 margin: 0 auto;
             }
 
@@ -532,16 +538,18 @@
                 </div>
             </div>
 
-            <!-- 소개 문구 및 교재 이미지 2종 (img/book.jpg, img/book2.jpg) -->
+            <!-- 수정된 소개 문구 및 교재 카드 2종 (img/book.jpg, img/book2.jpg) -->
             <div class="intro-card">
                 <div class="books-wrapper">
                     <div class="book-item">
                         <img src="img/book.jpg" alt="한 권으로 배우는 신학교 표지">
-                        <div class="book-caption">주교재</div>
+                        <div class="book-title">한 권으로 배우는 신학교</div>
+                        <div class="book-author">알리스터 맥그래스</div>
                     </div>
                     <div class="book-item">
                         <img src="img/book2.jpg" alt="기독교 조직신학 개론 표지">
-                        <div class="book-caption">부교재</div>
+                        <div class="book-title">기독교 조직신학 개론</div>
+                        <div class="book-author">다니엘 L. 밀리오리</div>
                     </div>
                 </div>
                 <div class="intro-content">
@@ -549,8 +557,9 @@
                         <span class="subtitle">About Yahmeh</span>
                         <h2 class="serif-font">학교 소개 및 과정 안내</h2>
                     </div>
+                    <!-- 수정된 요청 문구 -->
                     <p>
-                        야매신학교는 미인가 신학교로, 알리스터 맥그래스(Alister McGrath)의 <strong>『한 권으로 배우는 신학교』</strong>를 중심으로 다니엘 L. 밀리오리(Daniel L. Migliore)의 <strong>『기독교 조직신학 개론』</strong>을 읽는 곳입니다.
+                        야매신학교는 자발적 미인가 신학교로, 알리스터 맥그래스(Alister McGrath)의 <strong>『한 권으로 배우는 신학교』</strong>를 다니엘 L. 밀리오리(Daniel L. Migliore)의 <strong>『기독교 조직신학 개론』</strong>과 더불어 읽는 곳입니다.
                     </p>
                     <p>
                         현재 13개월에 걸친 정규과정을 운영하고 있으며, 독실한 신앙인은 아무래도 좀 부담스러우니 대체로 가볍게 신학을 공부하고 싶은 분들을 환영합니다.
@@ -654,7 +663,7 @@
                     <h3 class="serif-font">13개월 정규과정 수강 안내</h3>
                     <p>참여 신청 및 기타 문의는 이메일로 편하게 연락주세요.</p>
                 </div>
-                <a href="mailto:yhmhsem@gmail.com" class="btn-primary">
+                <a href="mailto:contact@yahmeh.org" class="btn-primary">
                     <i class="fa-solid fa-envelope"></i> 수강 문의하기
                 </a>
             </div>
