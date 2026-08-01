@@ -144,7 +144,7 @@
 
         /* ----- Sections Common ----- */
         section {
-            padding: 100px 0;
+            padding: 90px 0;
         }
 
         .section-header {
@@ -210,33 +210,46 @@
             font-weight: 300;
         }
 
-        /* Intro Card with book.jpg */
+        /* Intro Card with 2 Books */
         .intro-card {
             background-color: var(--bg-light);
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
             padding: 40px;
             display: grid;
-            grid-template-columns: 180px 1fr;
+            grid-template-columns: 280px 1fr;
             gap: 40px;
             align-items: center;
         }
 
-        .book-wrapper {
+        .books-wrapper {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .book-item {
+            flex: 1;
             text-align: center;
         }
 
-        .book-wrapper img {
+        .book-item img {
             width: 100%;
-            max-width: 180px;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
             transition: var(--transition);
         }
 
-        .book-wrapper img:hover {
+        .book-item img:hover {
             transform: translateY(-4px);
+        }
+
+        .book-caption {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            font-weight: 500;
         }
 
         .intro-content h3 {
@@ -313,6 +326,46 @@
             color: var(--text-muted);
             font-size: 0.98rem;
             line-height: 1.7;
+        }
+
+        /* ----- FAQ Section ----- */
+        .faq-section {
+            background-color: var(--white);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 1.8rem;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .faq-question i {
+            color: var(--accent);
+            margin-top: 0.2rem;
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            padding-left: 1.5rem;
         }
 
         /* ----- Registration Section ----- */
@@ -432,6 +485,11 @@
                 text-align: center;
             }
 
+            .books-wrapper {
+                max-width: 260px;
+                margin: 0 auto;
+            }
+
             .register-banner {
                 flex-direction: column;
                 text-align: center;
@@ -455,6 +513,7 @@
             <nav class="nav-links" id="navLinks">
                 <a href="#intro">학교 소개</a>
                 <a href="#principles">3대 원칙</a>
+                <a href="#faq">자주 묻는 질문</a>
                 <a href="#register" class="btn-cta-nav">수강 신청</a>
             </nav>
         </div>
@@ -473,10 +532,17 @@
                 </div>
             </div>
 
-            <!-- 소개 문구 및 교재 이미지 (img/book.jpg) -->
+            <!-- 소개 문구 및 교재 이미지 2종 (img/book.jpg, img/book2.jpg) -->
             <div class="intro-card">
-                <div class="book-wrapper">
-                    <img src="img/book.jpg" alt="한 권으로 배우는 신학교 교재 표지">
+                <div class="books-wrapper">
+                    <div class="book-item">
+                        <img src="img/book.jpg" alt="한 권으로 배우는 신학교 표지">
+                        <div class="book-caption">주교재</div>
+                    </div>
+                    <div class="book-item">
+                        <img src="img/book2.jpg" alt="기독교 조직신학 개론 표지">
+                        <div class="book-caption">부교재</div>
+                    </div>
                 </div>
                 <div class="intro-content">
                     <div class="section-header" style="margin-bottom: 12px;">
@@ -528,6 +594,58 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-header" style="text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <span class="subtitle">FAQ</span>
+                <h2 class="serif-font">자주 묻는 질문</h2>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <span>신앙이 없거나 교인 및 신자가 아니어도 참여할 수 있나요?</span>
+                    </div>
+                    <div class="faq-answer">
+                        네, 전혀 상관없습니다. 야매신학교는 무신론자나 타 종교인, 교양 수준에서 신학적 지식에 흥미가 있는 분 등 누구에게나 열려 있습니다.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <span>시험이나 과제가 인가 신학교처럼 과도한가요?</span>
+                    </div>
+                    <div class="faq-answer">
+                        아닙니다. 지식을 평가하는 시험이나 거창한 과제는 없습니다. 매주 정해진 책의 분량을 읽어오시는 것만으로 충분합니다.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <span>등록금 1만 원은 어디에 사용되나요?</span>
+                    </div>
+                    <div class="faq-answer">
+                        수강생 여러분이 끝까지 13개월 과정을 완독할 수 있도록 돕는 '동기부여용 장치'이며, 학교의 최소한의 운영 비용으로 쓰입니다.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <span>중도에 학업을 그만두게 되면 어떻게 되나요?</span>
+                    </div>
+                    <div class="faq-answer">
+                        자유롭게 하차하실 수 있습니다. 누구도 정죄하거나 강요하지 않으니 부담 없이 원하는 만큼 탐구하시면 됩니다.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Registration Section -->
     <section id="register" class="register-section">
         <div class="container">
@@ -536,7 +654,7 @@
                     <h3 class="serif-font">13개월 정규과정 수강 안내</h3>
                     <p>참여 신청 및 기타 문의는 이메일로 편하게 연락주세요.</p>
                 </div>
-                <a href="mailto:contact@yahmeh.org" class="btn-primary">
+                <a href="mailto:yhmhsem@gmail.com" class="btn-primary">
                     <i class="fa-solid fa-envelope"></i> 수강 문의하기
                 </a>
             </div>
