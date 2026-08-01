@@ -20,7 +20,8 @@
             --primary-light: #1e293b;    /* Slate 800 */
             --accent: #b45309;           /* Amber 700 */
             --accent-light: #fef3c7;     /* Amber 100 */
-            --bg-light: #f8fafc;         /* Slate 50 */
+            --bg-gray: #f8fafc;          /* Slate 50 (밝은 회색) */
+            --bg-white: #ffffff;         /* 순백색 */
             --border-color: #e2e8f0;     /* Slate 200 */
             --text-dark: #0f172a;
             --text-muted: #64748b;       /* Slate 500 */
@@ -43,7 +44,7 @@
         body {
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
             color: var(--text-dark);
-            background-color: var(--white);
+            background-color: var(--bg-white);
             line-height: 1.7;
             word-break: keep-all;
         }
@@ -142,9 +143,10 @@
             cursor: pointer;
         }
 
-        /* ----- Sections Common ----- */
+        /* ----- Section Base ----- */
         section {
             padding: 90px 0;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .section-header {
@@ -167,10 +169,10 @@
             font-weight: 700;
         }
 
-        /* ----- Intro Section (학교 소개) ----- */
+        /* ----- 1. 학교 소개 섹션 (밝은 회색) ----- */
         .intro-section {
             padding-top: 130px;
-            padding-bottom: 60px;
+            background-color: var(--bg-gray);
         }
 
         .hero-banner {
@@ -212,10 +214,11 @@
         }
 
         .about-card {
-            background-color: var(--bg-light);
+            background-color: var(--bg-white);
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
             padding: 40px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
         }
 
         .about-card p {
@@ -233,15 +236,13 @@
             color: var(--primary);
         }
 
-        /* ----- Curriculum Section (과정 소개) ----- */
+        /* ----- 2. 과정 소개 섹션 (순백색) ----- */
         .curriculum-section {
-            background-color: var(--white);
-            border-top: 1px solid var(--border-color);
-            padding-top: 80px;
+            background-color: var(--bg-white);
         }
 
         .curriculum-card {
-            background-color: var(--bg-light);
+            background-color: var(--bg-gray);
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
             padding: 40px;
@@ -260,7 +261,7 @@
         .book-item {
             flex: 1;
             text-align: center;
-            background: var(--white);
+            background: var(--bg-white);
             padding: 12px;
             border-radius: 10px;
             border: 1px solid var(--border-color);
@@ -306,11 +307,9 @@
             margin-bottom: 0;
         }
 
-        /* ----- Principles Section ----- */
+        /* ----- 3. 3대 원칙 섹션 (밝은 회색) ----- */
         .principles-section {
-            background-color: var(--bg-light);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+            background-color: var(--bg-gray);
         }
 
         .principles-grid {
@@ -320,7 +319,7 @@
         }
 
         .card {
-            background: var(--white);
+            background: var(--bg-white);
             border-radius: var(--radius);
             padding: 2.2rem;
             border: 1px solid var(--border-color);
@@ -360,9 +359,9 @@
             line-height: 1.7;
         }
 
-        /* ----- FAQ Section ----- */
+        /* ----- 4. 자주 묻는 질문 섹션 (순백색) ----- */
         .faq-section {
-            background-color: var(--white);
+            background-color: var(--bg-white);
         }
 
         .faq-grid {
@@ -372,7 +371,7 @@
         }
 
         .faq-item {
-            background-color: var(--bg-light);
+            background-color: var(--bg-gray);
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
             padding: 1.8rem;
@@ -400,7 +399,12 @@
             padding-left: 1.5rem;
         }
 
-        /* ----- Registration Section ----- */
+        /* ----- 5. 수강 신청 섹션 (밝은 회색 & 배너) ----- */
+        .register-section {
+            background-color: var(--bg-gray);
+            border-bottom: none;
+        }
+
         .register-banner {
             background-color: var(--primary);
             color: var(--white);
@@ -482,7 +486,7 @@
                 top: 72px;
                 left: 0;
                 right: 0;
-                background-color: var(--white);
+                background-color: var(--bg-white);
                 flex-direction: column;
                 padding: 2rem;
                 box-shadow: 0 10px 15px rgba(0,0,0,0.1);
@@ -551,7 +555,7 @@
         </div>
     </header>
 
-    <!-- 1. 학교 소개 섹션 -->
+    <!-- 1. 학교 소개 섹션 (밝은 회색) -->
     <section id="about" class="intro-section">
         <div class="container">
             
@@ -578,7 +582,7 @@
         </div>
     </section>
 
-    <!-- 2. 과정 소개 섹션 -->
+    <!-- 2. 과정 소개 섹션 (순백색) -->
     <section id="curriculum" class="curriculum-section">
         <div class="container">
             
@@ -615,7 +619,7 @@
         </div>
     </section>
 
-    <!-- 3. Principles Section -->
+    <!-- 3. 3대 원칙 섹션 (밝은 회색) -->
     <section id="principles" class="principles-section">
         <div class="container">
             <div class="section-header" style="text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">
@@ -648,7 +652,7 @@
         </div>
     </section>
 
-    <!-- 4. FAQ Section -->
+    <!-- 4. 자주 묻는 질문 섹션 (순백색) -->
     <section id="faq" class="faq-section">
         <div class="container">
             <div class="section-header" style="text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">
@@ -700,7 +704,7 @@
         </div>
     </section>
 
-    <!-- 5. Registration Section -->
+    <!-- 5. 수강 신청 섹션 (밝은 회색) -->
     <section id="register" class="register-section">
         <div class="container">
             <div class="register-banner">
