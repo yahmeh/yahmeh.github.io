@@ -3,827 +3,281 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>야매신학교 | Yahmeh Seminary</title>
-    <meta name="description" content="날것의 열정과 자유로운 탐구로 시대를 해석하는 야매신학교입니다.">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <title>★☆★ 야매신학교 (Yahmeh Seminary)에 오신 것을 환영합니다 ★☆★</title>
     <style>
-        :root {
-            --primary: #18181b;       /* Charcoal Black */
-            --primary-accent: #09090b;
-            --accent: #d97706;        /* Amber Gold */
-            --accent-light: #fef3c7;
-            --bg-light: #f4f4f5;
-            --text-dark: #18181b;
-            --text-muted: #52525b;
-            --white: #ffffff;
-            --max-width: 1200px;
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        /* 90s Vintage Theme Styles */
         body {
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-            color: var(--text-dark);
-            background-color: var(--white);
-            line-height: 1.7;
-            word-break: keep-all;
+            background-color: #000080; /* Classic Navy Background */
+            color: #ffffff;
+            font-family: "D2Coding", "Courier New", "Gulim", "굴림", monospace;
+            margin: 0;
+            padding: 10px;
+            background-image: radial-gradient(#0000ff 15%, transparent 16%), radial-gradient(#000040 15%, transparent 16%);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
         }
 
-        h1, h2, h3, .serif-font {
-            font-family: 'Noto Serif KR', serif;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        .container {
-            max-width: var(--max-width);
+        /* Table Centering Framework */
+        .main-table {
+            width: 800px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            background-color: #000000;
+            border: 4px ridge #c0c0c0;
+            box-shadow: 10px 10px 0px #000000;
         }
 
-        /* ----- Header & Navigation ----- */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            z-index: 1000;
-            transition: var(--transition);
+        /* Banner & Header */
+        .header-bg {
+            background: linear-gradient(90deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
+            padding: 3px;
+            text-align: center;
         }
 
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
+        .header-inner {
+            background-color: #000000;
+            padding: 15px;
         }
 
-        .logo {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        /* Neon & Retro Typography */
+        h1 {
+            color: #00ff00;
+            font-size: 26pt;
+            text-shadow: 3px 3px #ff00ff;
+            margin: 10px 0;
+            letter-spacing: 2px;
         }
 
-        .logo i {
-            color: var(--accent);
+        .subtitle {
+            color: #ffff00;
+            font-size: 11pt;
+            font-weight: bold;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
+        /* Vintage Blink Animation */
+        .blink {
+            animation: blinker 1s linear infinite;
+            color: #ff0000;
+            font-weight: bold;
         }
 
-        .nav-links a {
-            font-weight: 500;
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            transition: var(--transition);
+        @keyframes blinker {
+            50% { opacity: 0; }
         }
 
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        .btn-cta-nav {
-            background-color: var(--accent);
-            color: var(--white) !important;
-            padding: 0.5rem 1.25rem;
-            border-radius: 6px;
-            font-weight: 600;
-        }
-
-        .btn-cta-nav:hover {
-            background-color: #b45309;
-        }
-
-        .mobile-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
+        /* Retro Buttons */
+        .retro-btn {
+            background-color: #c0c0c0;
+            color: #000000;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            padding: 4px 10px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 9pt;
+            display: inline-block;
             cursor: pointer;
         }
 
-        /* ----- Hero Section ----- */
-        .hero {
-            position: relative;
-            background: linear-gradient(rgba(24, 24, 27, 0.8), rgba(24, 24, 27, 0.8)), 
-                        url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            color: var(--white);
-            padding: 180px 0 120px 0;
-            text-align: center;
+        .retro-btn:active {
+            border-top: 2px solid #000000;
+            border-left: 2px solid #000000;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
         }
 
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
+        /* Content Box */
+        .content-box {
+            border: 2px inset #ffffff;
+            background-color: #000033;
+            padding: 15px;
+            margin: 10px 0;
         }
 
-        .hero-badge {
+        /* Rule Cards Grid */
+        .rule-card {
+            border: 1px dashed #00ffff;
+            background-color: #000055;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+
+        .rule-num {
+            color: #ff00ff;
+            font-size: 14pt;
+            font-weight: bold;
+        }
+
+        /* Marquee Bar */
+        marquee {
+            background-color: #ffff00;
+            color: #000000;
+            font-weight: bold;
+            padding: 3px;
+            border: 1px solid #000;
+        }
+
+        /* Visitor Counter */
+        .counter-box {
+            background-color: #000000;
+            border: 2px inset #808080;
+            color: #00ff00;
+            font-family: "Courier New", monospace;
+            font-size: 14pt;
+            padding: 2px 8px;
+            letter-spacing: 3px;
             display: inline-block;
-            background-color: rgba(217, 119, 6, 0.25);
-            border: 1px solid var(--accent);
-            color: #fde68a;
-            padding: 0.35rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 1px;
         }
 
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            line-height: 1.35;
-            margin-bottom: 1.25rem;
+        a {
+            color: #00ffff;
+        }
+        a:hover {
+            color: #ff00ff;
+            background-color: #ffff00;
         }
 
-        .hero p {
-            font-size: 1.15rem;
-            color: #d4d4d8;
-            margin-bottom: 2.5rem;
-            font-weight: 300;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        .btn-primary {
-            background-color: var(--accent);
-            color: var(--white);
-            padding: 0.85rem 2rem;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .btn-primary:hover {
-            background-color: #b45309;
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--white);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            padding: 0.85rem 2rem;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-color: var(--white);
-        }
-
-        /* ----- Sections Common ----- */
-        section {
-            padding: 90px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 650px;
-            margin: 0 auto 60px auto;
-        }
-
-        .section-header .subtitle {
-            color: var(--accent);
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .section-header h2 {
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-        }
-
-        /* ----- About Section ----- */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 420px;
-            object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 1.25rem;
-            line-height: 1.4;
-        }
-
-        .about-text p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.25rem;
-            margin-top: 2rem;
-        }
-
-        .about-feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-        }
-
-        .about-feature-item i {
-            color: var(--accent);
-            margin-top: 0.25rem;
-        }
-
-        /* ----- Academic Programs ----- */
-        .programs {
-            background-color: var(--bg-light);
-        }
-
-        .program-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: var(--white);
-            border-radius: 10px;
-            padding: 2.5rem 2rem;
-            border: 1px solid #e4e4e7;
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            border-color: #d4d4d8;
-        }
-
-        .card-icon {
-            width: 50px;
-            height: 50px;
-            background-color: var(--accent-light);
-            color: var(--accent);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .card h3 {
-            font-size: 1.4rem;
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .card-meta {
-            border-top: 1px solid #f4f4f5;
-            padding-top: 1rem;
-            font-size: 0.85rem;
-            color: #71717a;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        /* ----- Admissions Guide ----- */
-        .admissions-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .step-item {
-            text-align: center;
-            padding: 2rem 1.5rem;
-            background-color: var(--white);
-            border-radius: 8px;
-            border: 1px solid #f4f4f5;
-            position: relative;
-        }
-
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            margin: 0 auto 1.25rem auto;
-        }
-
-        .step-item h4 {
-            font-size: 1.15rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-
-        .step-item p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .admissions-banner {
-            margin-top: 4rem;
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 3rem;
-            border-radius: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .admissions-banner h3 {
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .admissions-banner p {
-            color: #a1a1aa;
-        }
-
-        /* ----- Contact & Location ----- */
-        .contact {
-            background-color: var(--bg-light);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .contact-info-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .contact-info-item {
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-        }
-
-        .contact-info-item i {
-            color: var(--accent);
-            font-size: 1.2rem;
-            margin-top: 0.2rem;
-        }
-
-        .contact-info-item h5 {
-            font-size: 1rem;
-            color: var(--primary);
-            margin-bottom: 0.2rem;
-        }
-
-        .contact-info-item p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .contact-map {
-            background: #e4e4e7;
-            border-radius: 10px;
-            min-height: 320px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            text-align: center;
-            padding: 2rem;
-            overflow: hidden;
-        }
-
-        /* ----- Footer ----- */
-        footer {
-            background-color: var(--primary-accent);
-            color: #a1a1aa;
-            padding: 60px 0 30px 0;
-            font-size: 0.9rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 40px;
-        }
-
-        .footer-logo {
-            color: var(--white);
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .footer-col h4 {
-            color: var(--white);
-            margin-bottom: 1.25rem;
-            font-size: 1rem;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 0.6rem;
-        }
-
-        .footer-col ul a:hover {
-            color: var(--white);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #27272a;
-            padding-top: 30px;
-            text-align: center;
-            font-size: 0.85rem;
-        }
-
-        /* ----- Responsive Design ----- */
-        @media (max-width: 868px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background-color: var(--white);
-                flex-direction: column;
-                padding: 2rem;
-                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-                gap: 1.25rem;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .mobile-toggle {
-                display: block;
-            }
-
-            .hero h1 {
-                font-size: 2.1rem;
-            }
-
-            .about-grid, .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .admissions-banner {
-                flex-direction: column;
-                text-align: center;
-            }
+        ul {
+            list-style-type: square;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Navigation -->
-    <header>
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <i class="fa-solid fa-fire-flame-curved"></i>
-                <span>야매신학교</span>
-            </a>
-            <button class="mobile-toggle" id="mobileMenuBtn" aria-label="메뉴 열기">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <nav class="nav-links" id="navLinks">
-                <a href="#about">학교 소개</a>
-                <a href="#programs">커리큘럼</a>
-                <a href="#admissions">입학 안내</a>
-                <a href="#contact">오시는 길</a>
-                <a href="#admissions" class="btn-cta-nav">수강 신청</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <span class="hero-badge">YAHMEH SEMINARY</span>
-            <h1 class="serif-font">날것의 질문으로 시작하는<br>자유로운 신학 탐구</h1>
-            <p>형식과 권위를 넘어, 삶의 현장에서 묻고 답하며 스스로 깊어지는 신학 공동체입니다.</p>
-            <div class="hero-buttons">
-                <a href="#admissions" class="btn-primary">신입생 수강안내</a>
-                <a href="#programs" class="btn-secondary">모듈 둘러보기</a>
+<!-- Main Classic Layout Table -->
+<table class="main-table" cellpadding="10" cellspacing="0">
+    <!-- Header Row -->
+    <tr>
+        <td class="header-bg">
+            <div class="header-inner">
+                <p class="subtitle">~~~ WELCOME TO YAHMEH SEMINARY HOMEPAGE ~~~</p>
+                <h1>✝ 야매신학교 ✝</h1>
+                <p class="subtitle">(Yahmeh Seminary / 耶每神學校)</p>
+                <hr color="#ff00ff" size="3">
+                <!-- Navigation Bar -->
+                <table width="100%" border="0" text-align="center">
+                    <tr>
+                        <td align="center"><a href="#intro" class="retro-btn">[학교소개]</a></td>
+                        <td align="center"><a href="#curriculum" class="retro-btn">[정규과정]</a></td>
+                        <td align="center"><a href="#rules" class="retro-btn">[3대원칙]</a></td>
+                        <td align="center"><a href="#register" class="retro-btn">[등록안내]</a></td>
+                        <td align="center"><a href="#guestbook" class="retro-btn">[방명록]</a></td>
+                    </tr>
+                </table>
             </div>
-        </div>
-    </section>
+        </td>
+    </tr>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=800&q=80" alt="야매신학교 서재 전경">
-                </div>
-                <div class="about-text">
-                    <div class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
-                        <span class="subtitle">About Yahmeh</span>
-                        <h2 class="serif-font">솔직하고 치열하게,<br>경계를 넘나드는 탐구</h2>
-                    </div>
-                    <p>야매신학교는 거창한 연출이나 고립된 학문성에 갇히지 않습니다. 세상의 온갖 질문과 텍스트를 직면하며 자유롭게 논의하는 독립 신학 네트워크입니다.</p>
-                    <p>누구나 질문할 수 있고, 질문을 통해 스스로의 세계관을 단단히 세워나가는 현장 중심의 배움을 지향합니다.</p>
-                    
-                    <div class="about-features">
-                        <div class="about-feature-item">
-                            <i class="fa-solid fa-circle-check"></i>
-                            <div>
-                                <strong>열린 토론과 통섭</strong>
-                                <p style="font-size: 0.85rem; color: #71717a;">교리와 학문의 경계를 넘나드는 사유</p>
-                            </div>
-                        </div>
-                        <div class="about-feature-item">
-                            <i class="fa-solid fa-circle-check"></i>
-                            <div>
-                                <strong>자기주도적 모듈</strong>
-                                <p style="font-size: 0.85rem; color: #71717a;">내 삶의 이슈와 맞닿은 실천적 탐구</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Marquee Alert -->
+    <tr>
+        <td>
+            <marquee behavior="scroll" direction="left" scrollamount="5">
+                ★ [공지] 야매신학교 정규과정 "한 권으로 배우는 신학교" 13개월 코스 수강생 상시 모집 중! 인가 미신청 선언! ★
+            </marquee>
+        </td>
+    </tr>
 
-    <!-- Academic Programs -->
-    <section id="programs" class="programs">
-        <div class="container">
-            <div class="section-header">
-                <span class="subtitle">Curriculum Modules</span>
-                <h2 class="serif-font">주요 탐구 모듈</h2>
-                <p>기초 텍스트 읽기부터 현대 사회 이슈를 아우르는 다채로운 커리큘럼입니다.</p>
+    <!-- Main Content Area -->
+    <tr>
+        <td>
+            <!-- Main Banner Notice -->
+            <div class="content-box" id="intro">
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="60" align="center" valign="top">
+                            <span style="font-size: 30pt;">⛪</span>
+                        </td>
+                        <td>
+                            <h2 style="color: #ffff00; margin-top:0; font-size: 14pt;">
+                                <span class="blink">★환영★</span> 야매신학교(Yahmeh Seminary)에 오신 것을 환영합니다!
+                            </h2>
+                            <p style="line-height: 1.6; font-size: 10pt; color: #ffffff;">
+                                현재 야매신학교는 <b>13개월</b>에 걸쳐, <mark style="background-color: #ff00ff; color: #ffffff;">"한 권으로 배우는 신학교"</mark>를 읽는 과정을 정규과정으로 운영하고 있습니다.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
             </div>
 
-            <div class="program-cards">
-                <!-- Card 1 -->
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-compass"></i>
-                    </div>
-                    <h3 class="serif-font">날것의 신학 (Raw Theology)</h3>
-                    <p>교리적 문법에 얽매이지 않고 성경 텍스트와 역사적 맥락을 직접 뜯어보며 자신만의 언어로 신학을 조망합니다.</p>
-                    <div class="card-meta">
-                        <span><i class="fa-regular fa-clock"></i> 12주 코스</span>
-                        <span>입문 / 정기</span>
-                    </div>
+            <!-- 3 Key Rules Section -->
+            <div class="content-box" id="rules">
+                <h3 style="color: #00ff00; border-bottom: 2px dotted #00ff00; padding-bottom: 5px; margin-top:0;">
+                    📜 야매신학교 운영 3대 칙령 (必讀)
+                </h3>
+
+                <!-- Rule 1 -->
+                <div class="rule-card">
+                    <span class="rule-num">원칙 1.</span> <b style="color: #ffff00; font-size: 11pt;">미인가 및 흥미 본위 추구</b>
+                    <p style="margin: 5px 0 0 0; font-size: 9.5pt; color: #dcdcdc;">
+                        본 신학교는 <b>인가받지 않은 곳</b>으로, 앞으로도 <span class="blink">인가받을 생각이 전혀 없습니다.</span> 기본적으로 흥미 본위의 신학을 즐겁게 추구합니다.
+                    </p>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-comments"></i>
-                    </div>
-                    <h3 class="serif-font">현대 문화와 텍스트 읽기</h3>
-                    <p>철학, 문학, 디지털 문화에 드러난 인간의 질문을 신학적 시선과 결합해 읽어내는 유연한 세미나입니다.</p>
-                    <div class="card-meta">
-                        <span><i class="fa-regular fa-clock"></i> 8주 코스</span>
-                        <span>심화 세미나</span>
-                    </div>
+                <!-- Rule 2 -->
+                <div class="rule-card">
+                    <span class="rule-num">원칙 2.</span> <b style="color: #ffff00; font-size: 11pt;">신앙의 완전한 자유 보장</b>
+                    <p style="margin: 5px 0 0 0; font-size: 9.5pt; color: #dcdcdc;">
+                        <b>신앙은 각자 알아서 합시다.</b> 뭘 믿든 말든 개인의 자유를 철저히 존중합니다. 마찬가지로 다른 사람의 신앙을 절하하거나 비난하지 않습니다.
+                    </p>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-feather-pointed"></i>
-                    </div>
-                    <h3 class="serif-font">자유 연구 및 랩(Lab)</h3>
-                    <p>자신만의 주제를 정해 에세이를 쓰고, 동료들과 피드백을 주고받으며 독립적 신학 아카이빙을 구축합니다.</p>
-                    <div class="card-meta">
-                        <span><i class="fa-regular fa-clock"></i> 상시 운영</span>
-                        <span>자율 프로젝트</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Admissions Guide -->
-    <section id="admissions" class="admissions">
-        <div class="container">
-            <div class="section-header">
-                <span class="subtitle">Process</span>
-                <h2 class="serif-font">참여 절차</h2>
-                <p>질문할 준비가 된 누구에게나 야매신학교의 문은 열려 있습니다.</p>
-            </div>
-
-            <div class="admissions-steps">
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <h4>모듈 선택</h4>
-                    <p>자신의 관심사와 호기심에 맞는 세미나/모듈 선택</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <h4>지원의 글 작성</h4>
-                    <p>거창한 스펙 대신 탐구하고 싶은 질문 한 줄 공유</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <h4>오리엔테이션</h4>
-                    <p>동료 멤버들과 가벼운 미팅 및 텍스트 분량 협의</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">4</div>
-                    <h4>탐구 시작</h4>
-                    <p>주차별 읽기와 열린 토론으로 만드는 자체 스터디</p>
+                <!-- Rule 3 -->
+                <div class="rule-card">
+                    <span class="rule-num">원칙 3.</span> <b style="color: #ffff00; font-size: 11pt;">최소한의 동기부여 (등록금)</b>
+                    <p style="margin: 5px 0 0 0; font-size: 9.5pt; color: #dcdcdc;">
+                        등록금은 <b style="color: #00ff00; font-size: 11pt;">월 1만 원</b>입니다. 이는 중도 하차를 방지하기 위한 최소한의 동기 부여를 위함입니다.
+                    </p>
                 </div>
             </div>
 
-            <div class="admissions-banner">
-                <div>
-                    <h3 class="serif-font">궁금한 점이 있으신가요?</h3>
-                    <p>모듈 참여 방식이나 스터디 개설 문의는 언제든 편하게 연락해 주세요.</p>
-                </div>
-                <a href="mailto:info@yahmeh-seminary.org" class="btn-primary" style="white-space: nowrap;">
-                    <i class="fa-solid fa-envelope"></i> 문의 보내기
-                </a>
+            <!-- Curriculum Info -->
+            <div class="content-box" id="curriculum">
+                <h3 style="color: #00ffff; margin-top:0;">📚 정규 과정 커리큘럼 안내</h3>
+                <ul style="font-size: 9.5pt; line-height: 1.8;">
+                    <li><b>교재:</b> 《한 권으로 배우는 신학교》</li>
+                    <li><b>기간:</b> 총 13개월 (월간 모듈 진행)</li>
+                    <li><b>방식:</b> 자율 정독 + 토론 및 텍스트 뜯어보기</li>
+                    <li><b>자격:</b> 신학에 흥미가 있는 지구인 누구나</li>
+                </ul>
             </div>
-        </div>
-    </section>
 
-    <!-- Contact & Location -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-grid">
-                <div>
-                    <div class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
-                        <span class="subtitle">Contact</span>
-                        <h2 class="serif-font">모임 장소 및 연락처</h2>
-                    </div>
-                    <p>온·오프라인 하이브리드 방식으로 운영되며, 오프라인 모임은 지정된 탐구 공간에서 진행됩니다.</p>
-
-                    <div class="contact-info-list">
-                        <div class="contact-info-item">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <div>
-                                <h5>오프라인 러닝 스페이스</h5>
-                                <p>서울특별시 마포구 독막로 123 야매 아지트 2층</p>
-                            </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <i class="fa-solid fa-hashtag"></i>
-                            <div>
-                                <h5>온라인 클럽</h5>
-                                <p>Discord / Zoom 커뮤니티 채널 운영</p>
-                            </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <i class="fa-solid fa-envelope"></i>
-                            <div>
-                                <h5>이메일</h5>
-                                <p>contact@yahmeh.org</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Map Placeholder -->
-                <div class="contact-map">
-                    <div>
-                        <i class="fa-solid fa-map-location-dot" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
-                        <p style="font-weight: 600; color: var(--primary);">지도 연동 영역</p>
-                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
-                            (필요시 Kakao Map 또는 Google Maps iframe을 삽입할 수 있습니다.)
-                        </p>
-                    </div>
-                </div>
+            <!-- Registration Area -->
+            <div class="content-box" id="register" style="text-align: center; background-color: #330033;">
+                <h3 style="color: #ff00ff; margin-top: 0;">✉️ 수강 신청 / 등록 문의</h3>
+                <p style="font-size: 9.5pt;">월 1만 원으로 시작하는 흥미진진한 신학 탐구!</p>
+                <p>
+                    <a href="mailto:yahmeh@seminary.net" class="retro-btn" style="font-size: 11pt; padding: 6px 20px;">
+                        👉 [이메일로 등록 신청하기] 👈
+                    </a>
+                </p>
             </div>
-        </div>
-    </section>
+        </td>
+    </tr>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <a href="#" class="footer-logo serif-font">야매신학교</a>
-                    <p>Yahmeh Seminary</p>
-                    <p style="margin-top: 0.75rem; font-size: 0.85rem;">자유롭고 솔직한 사유로 시대를 읽어내는 신학 탐구 공동체</p>
-                </div>
-                <div class="footer-col">
-                    <h4>바로가기</h4>
-                    <ul>
-                        <li><a href="#about">학교 소개</a></li>
-                        <li><a href="#programs">커리큘럼</a></li>
-                        <li><a href="#admissions">입학 안내</a></li>
-                        <li><a href="#contact">오시는 길</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>커뮤니티</h4>
-                    <ul>
-                        <li><a href="#">아카이브 / 에세이</a></li>
-                        <li><a href="#">독립 출판물</a></li>
-                        <li><a href="#">디스코드 채널</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Yahmeh Seminary. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer & Counters -->
+    <tr>
+        <td style="background-color: #111111; text-align: center; padding: 15px; border-top: 2px solid #c0c0c0;">
+            <p style="font-size: 9pt; color: #888888; margin-bottom: 8px;">
+                VISITOR COUNTER (당신은 [<b>야매신학교</b>]의 
+                <span class="counter-box">001392</span> 번째 방문자입니다)
+            </p>
 
-    <!-- Interactive Script -->
-    <script>
-        // Mobile Navigation Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
+            <!-- Vintage Banners -->
+            <p style="margin: 10px 0;">
+                <span style="border:1px solid #fff; padding:2px; font-size:8pt; background:#000; color:#fff;">[Netscape 4.0 Recommended]</span>
+                <span style="border:1px solid #fff; padding:2px; font-size:8pt; background:#000; color:#00ff00;">[800x600 Resolution]</span>
+                <span style="border:1px solid #fff; padding:2px; font-size:8pt; background:#ff0000; color:#fff;">[MADE WITH HTML 4.0]</span>
+            </p>
 
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const isOpen = navLinks.classList.contains('active');
-            mobileMenuBtn.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
-        });
+            <p style="font-size: 8.5pt; color: #aaaaaa; margin-bottom: 0;">
+                Copyright ⓒ 2026 <b>야매신학교 (Yahmeh Seminary)</b>. All Rights Reserved.<br>
+                Best viewed with Internet Explorer 5.0 or Netscape Navigator.
+            </p>
+        </td>
+    </tr>
+</table>
 
-        // Close Mobile Nav when clicking link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-            });
-        });
-    </script>
+<br><br>
 </body>
 </html>
