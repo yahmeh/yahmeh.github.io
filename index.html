@@ -47,23 +47,11 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
-        /* Header Bar with Hero Image */
+        /* Header Bar */
         header {
             border-bottom: 2px solid var(--navy-academic);
             text-align: center;
-            overflow: hidden;
-        }
-
-        .header-hero-img {
-            width: 100%;
-            max-height: 320px;
-            object-fit: cover;
-            display: block;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .header-text-block {
-            padding: 30px 40px 25px 40px;
+            padding: 35px 40px 25px 40px;
         }
 
         .header-title-kr {
@@ -134,6 +122,16 @@
             content: "■";
             font-size: 0.75rem;
             color: var(--accent-gold);
+        }
+
+        /* Main Hero Image ('소개' 위 위치) */
+        .main-hero-img {
+            width: 100%;
+            max-height: 320px;
+            object-fit: cover;
+            display: block;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
         }
 
         /* Intro Box with Book Image */
@@ -246,12 +244,8 @@
 
     <!-- Header -->
     <header>
-        <!-- 사제 그림 (상단 메인 이미지) -->
-        <img src="img/junim.jpg" alt="야매신학교 메인 이미지" class="header-hero-img">
-        <div class="header-text-block">
-            <h1 class="header-title-kr">야매신학교</h1>
-            <div class="header-title-en">Yahmeh Seminary</div>
-        </div>
+        <h1 class="header-title-kr">야매신학교</h1>
+        <div class="header-title-en">Yahmeh Seminary</div>
     </header>
 
     <!-- Navigation -->
@@ -268,6 +262,9 @@
 
         <!-- Intro Section -->
         <section class="section-block" id="intro">
+            <!-- 사제 메인 이미지 ('소개' 바로 위) -->
+            <img src="img/junim.png" alt="야매신학교 메인 이미지" class="main-hero-img">
+
             <h2 class="section-title">소개</h2>
             <div class="intro-box">
                 <!-- 교재 이미지 -->
@@ -318,7 +315,7 @@
                 <p style="color: var(--text-secondary); font-size: 0.9rem;">
                     13개월 과정 참여 및 문의사항은 아래 연락처로 문의해 주시기 바랍니다.
                 </p>
-                <a href="mailto:contact@yahmeh.org" class="btn-academic">✉ 이메일 수강 문의</a>
+                <a href="mailto:yhmhsem@gmail.com" class="btn-academic">✉ 이메일 수강 문의</a>
             </div>
         </section>
 
