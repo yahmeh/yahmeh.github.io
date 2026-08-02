@@ -176,7 +176,7 @@
             font-weight: 700;
         }
 
-        /* ----- 1. 학교 소개 섹션 (Split Hero Layout) ----- */
+        /* ----- 1. 학교 소개 섹션 ----- */
         .intro-section {
             padding-top: 140px;
         }
@@ -256,7 +256,7 @@
             color: var(--primary);
         }
 
-        /* ----- 2. 과정 소개 섹션 (3D Book Hover & Badge) ----- */
+        /* ----- 2. 과정 소개 섹션 ----- */
         .curriculum-section {
             background-color: var(--bg-white);
         }
@@ -348,55 +348,58 @@
             margin-bottom: 0;
         }
 
-        /* ----- 3. 3대 원칙 섹션 ----- */
-        .principles-grid {
+        /* ----- 3. 13개월 커리큘럼 커스텀 섹션 ----- */
+        .syllabus-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 1.25rem;
         }
 
-        .card {
-            background: var(--bg-white);
-            border-radius: var(--radius);
-            padding: 2.2rem;
+        .syllabus-card {
+            background-color: var(--bg-white);
             border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 1.5rem;
             transition: var(--transition);
-            display: flex;
-            flex-direction: column;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.05);
-            border-color: #cbd5e1;
+        .syllabus-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
         }
 
-        .card-tag {
-            display: inline-block;
-            font-size: 0.75rem;
+        .syllabus-month {
+            font-size: 0.8rem;
             font-weight: 700;
             color: var(--accent);
-            background-color: var(--accent-light);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            width: fit-content;
-            margin-bottom: 1.2rem;
-            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
         }
 
-        .card h3 {
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 0.8rem;
+        .syllabus-topics {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
         }
 
-        .card p {
-            color: var(--text-muted);
+        .topic-tag {
             font-size: 0.98rem;
-            line-height: 1.7;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        /* ----- 4. 자주 묻는 질문 섹션 (Accordion UI) ----- */
+        .topic-tag::before {
+            content: "•";
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* ----- 4. 자주 묻는 질문 섹션 (3대 원칙 통합) ----- */
         .faq-section {
             background-color: var(--bg-white);
         }
@@ -658,7 +661,7 @@
             <nav class="nav-links" id="navLinks">
                 <a href="#about">학교 소개</a>
                 <a href="#curriculum">과정 소개</a>
-                <a href="#principles">3대 원칙</a>
+                <a href="#syllabus">13개월 커리큘럼</a>
                 <a href="#faq">자주 묻는 질문</a>
                 <a href="#register" class="btn-cta-nav">수강 신청</a>
             </nav>
@@ -670,7 +673,6 @@
         <div class="container">
             
             <div class="hero-split">
-                <!-- 메인 캐치프레이즈 -->
                 <div class="hero-text-block">
                     <div class="hero-badge-tag">
                         <i class="fa-solid fa-feather"></i> 자발적 미인가 신학교
@@ -679,18 +681,16 @@
                     <p class="hero-desc">
                         야매신학교는 거창한 인가나 고립된 교리에 갇히지 않고, 신학적 지식이 주는 자유로운 흥미를 모토로 함께 책을 읽고 나눕니다.
                     </p>
-                    <a href="#curriculum" class="btn-primary" style="display: inline-flex;">
-                        정규과정 둘러보기 <i class="fa-solid fa-arrow-right"></i>
+                    <a href="#syllabus" class="btn-primary" style="display: inline-flex;">
+                        13개월 커리큘럼 보기 <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
 
-                <!-- 사제 비주얼 이미지 (img/junim.png) -->
                 <div class="hero-image-wrapper">
                     <img src="img/junim.png" alt="야매신학교 메인 비주얼">
                 </div>
             </div>
 
-            <!-- 새로 반영된 학교 소개 서술 카드 -->
             <div class="about-card">
                 <div class="section-header" style="margin-bottom: 15px;">
                     <span class="subtitle">About Yahmeh</span>
@@ -712,7 +712,6 @@
         <div class="container">
             
             <div class="curriculum-card">
-                <!-- 도서 이미지 2종 (img/book.jpg, img/book2.jpg) -->
                 <div class="books-wrapper">
                     <div class="book-item">
                         <span class="book-badge">주교재</span>
@@ -728,11 +727,10 @@
                     </div>
                 </div>
                 
-                <!-- 과정 소개 텍스트 -->
                 <div class="curriculum-content">
                     <div class="section-header">
-                        <span class="subtitle">Curriculum</span>
-                        <h2 class="serif-font">정규과정 안내</h2>
+                        <span class="subtitle">Curriculum Overview</span>
+                        <h2 class="serif-font">정규과정 개요</h2>
                     </div>
                     <p>
                         현재 <strong>13개월에 걸친 정규과정</strong>을 운영하고 있습니다.
@@ -746,96 +744,191 @@
         </div>
     </section>
 
-    <!-- 3. 3대 원칙 섹션 -->
-    <section id="principles" class="principles-section bg-grid-pattern">
+    <!-- 3. 13개월 커리큘럼 섹션 (2개 챕터 = 1달) -->
+    <section id="syllabus" class="principles-section bg-grid-pattern">
         <div class="container">
-            <div class="section-header" style="text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">
-                <span class="subtitle">Core Principles</span>
-                <h2 class="serif-font">야매신학교 3대 원칙</h2>
+            <div class="section-header" style="text-align: center; max-width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 50px;">
+                <span class="subtitle">13-Month Plan</span>
+                <h2 class="serif-font">13개월 정규 커리큘럼</h2>
             </div>
 
-            <div class="principles-grid">
-                <!-- Card 1 -->
-                <div class="card">
-                    <span class="card-tag">RULE 01</span>
-                    <h3 class="serif-font">미인가 & 흥미 본위</h3>
-                    <p>본 신학교는 인가받지 않은 곳으로, 인가받을 생각도 없습니다. 기본적으로 흥미 본위의 신학을 추구합니다.</p>
+            <div class="syllabus-grid">
+                <div class="syllabus-card">
+                    <div class="syllabus-month">Month 01</div>
+                    <div class="syllabus-topics">
+                        <div class="topic-tag">성경론</div>
+                        <div class="topic-tag">성경의 언어</div>
+                    </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="card">
-                    <span class="card-tag">RULE 02</span>
-                    <h3 class="serif-font">신앙의 자유와 존중</h3>
-                    <p>신앙은 각자 알아서 합시다. 뭘 믿든 말든 개인의 자유를 존중합니다. 마찬가지로 다른 사람의 신앙을 절하하지 않습니다.</p>
+                <div class="syllabus-card">
+                    <div class="syllabus-month">Month 02</div>
+                    <div class="syllabus-topics">
+                        <div class="topic-tag">성경해석</div>
+                        <div class="topic-tag">신론</div>
+                    </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="card">
-                    <span class="card-tag">RULE 03</span>
-                    <h3 class="serif-font">월 1만 원의 동기부여</h3>
-                    <p>등록금은 월 1만 원입니다. 이는 중도 하차를 방지하기 위한 최소한의 동기 부여를 위함입니다.</p>
+                <div class="syllabus-card">
+                    <div class="syllabus-month">Month 03</div>
+                    <div class="syllabus-topics">
+                        <div class="topic-tag">기독론</div>
+                        <div class="topic-tag">성령론</div>
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <div class="syllabus-month">Month 04</div>
+                    <div class="syllabus-topics">
+                        <div class="topic-tag">인간론과 죄론</div>
+                        <div class="topic-tag">구원론</div>
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <div class="syllabus-month">Month 05</div>
+                    <div class="syllabus-topics">
+                        <div class="topic-tag">교회론</div>
+                        <div class="topic-tag">종말론</div>
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <div class="syllabus-month">Month 06</div>
+                    <div class="syllabus-topics">
+                        <div class="topic-tag">구약의 배경</div>
+                        <div class="topic-tag">구약개관</div>
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <div class="syllabus-month">Month 07</div>
+                    <div class="syllabus-topics">
+                        <div class="topic-tag">신구약 중간기</div>
+                        <div class="topic-tag">신약의 배경</div>
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <div class="syllabus-month">Month 08</div>
+                    <div class="syllabus-topics">
+                        <div class="topic-tag">신약개관</div>
+                        <div class="topic-tag">변증학</div>
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <div class="syllabus-month">Month 09</div>
+                    <div class="syllabus-topics">
+                        <div class="topic-tag">세계의 종교</div>
+                        <div class="topic-tag">교회사: 초기 500년</div>
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <div class="syllabus-month">Month 10</div>
+                    <div class="syllabus-topics">
+                        <div class="topic-tag">중세교회</div>
+                        <div class="topic-tag">종교개혁과 부흥 운동</div>
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <div class="syllabus-month">Month 11</div>
+                    <div class="syllabus-topics">
+                        <div class="topic-tag">세계적 현상으로서의 기독교 (1750-1950)</div>
+                        <div class="topic-tag">1950년 이후의 교회</div>
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <div class="syllabus-month">Month 12</div>
+                    <div class="syllabus-topics">
+                        <div class="topic-tag">선교학 개론</div>
+                        <div class="topic-tag">크리스천 리더십</div>
+                    </div>
+                </div>
+
+                <div class="syllabus-card" style="grid-column: span 1;">
+                    <div class="syllabus-month">Month 13</div>
+                    <div class="syllabus-topics">
+                        <div class="topic-tag">기독교 윤리</div>
+                        <div class="topic-tag">기독교 교육</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. 자주 묻는 질문 섹션 (Accordion UI) -->
+    <!-- 4. 자주 묻는 질문 섹션 (3대 원칙 통합) -->
     <section id="faq" class="faq-section">
         <div class="container">
             <div class="section-header" style="text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">
-                <span class="subtitle">FAQ</span>
-                <h2 class="serif-font">자주 묻는 질문</h2>
+                <span class="subtitle">FAQ & Principles</span>
+                <h2 class="serif-font">운영 원칙 및 자주 묻는 질문</h2>
             </div>
 
             <div class="accordion">
-                <!-- Item 1 -->
+                <!-- 3대 원칙 1 -->
                 <div class="accordion-item active">
                     <button class="accordion-header">
-                        <span><i class="fa-solid fa-circle-question" style="color: var(--accent); margin-right: 8px;"></i> 신앙이 없거나 교인 및 신자가 아니어도 참여할 수 있나요?</span>
+                        <span><i class="fa-solid fa-circle-info" style="color: var(--accent); margin-right: 8px;"></i> 야매신학교는 인가받은 학위 과정인가요?</span>
                         <i class="fa-solid fa-chevron-down chevron"></i>
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            네, 전혀 상관없습니다. 야매신학교는 무신론자나 타 종교인, 교양 수준에서 신학적 지식에 흥미가 있는 분 등 누구에게나 열려 있습니다.
+                            아닙니다. 본 신학교는 인가받지 않은 곳으로, 인가받을 생각도 없습니다. 기본적으로 흥미 본위의 신학을 추구합니다.
                         </div>
                     </div>
                 </div>
 
-                <!-- Item 2 -->
+                <!-- 3대 원칙 2 -->
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span><i class="fa-solid fa-circle-question" style="color: var(--accent); margin-right: 8px;"></i> 시험이나 과제가 인가 신학교처럼 과도한가요?</span>
+                        <span><i class="fa-solid fa-circle-info" style="color: var(--accent); margin-right: 8px;"></i> 특정 종교적 교리나 신앙을 강요하나요?</span>
                         <i class="fa-solid fa-chevron-down chevron"></i>
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            아닙니다. 지식을 평가하는 시험이나 거창한 과제는 없습니다. 매주 정해진 책의 분량을 읽어오시는 것만으로 충분합니다.
+                            아닙니다. 신앙은 각자 알아서 합시다. 뭘 믿든 말든 개인의 자유를 존중합니다. 마찬가지로 다른 사람의 신앙을 절하하지 않습니다.
                         </div>
                     </div>
                 </div>
 
-                <!-- Item 3 -->
+                <!-- 3대 원칙 3 -->
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span><i class="fa-solid fa-circle-question" style="color: var(--accent); margin-right: 8px;"></i> 등록금 1만 원은 어디에 사용되나요?</span>
+                        <span><i class="fa-solid fa-circle-info" style="color: var(--accent); margin-right: 8px;"></i> 등록금 월 1만 원은 무엇인가요?</span>
                         <i class="fa-solid fa-chevron-down chevron"></i>
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            수강생 여러분이 끝까지 13개월 과정을 완독할 수 있도록 돕는 '동기부여용 장치'이며, 학교의 최소한의 운영 비용으로 쓰입니다.
+                            등록금은 월 1만 원입니다. 이는 수강생 여러분이 중도 하차하는 것을 방지하기 위한 최소한의 동기 부여를 위함입니다.
                         </div>
                     </div>
                 </div>
 
-                <!-- Item 4 -->
+                <!-- 일반 FAQ -->
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span><i class="fa-solid fa-circle-question" style="color: var(--accent); margin-right: 8px;"></i> 중도에 학업을 그만두게 되면 어떻게 되나요?</span>
+                        <span><i class="fa-solid fa-circle-question" style="color: var(--accent); margin-right: 8px;"></i> 신앙이 없거나 비신자여도 참여할 수 있나요?</span>
                         <i class="fa-solid fa-chevron-down chevron"></i>
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            자유롭게 하차하실 수 있습니다. 누구도 정죄하거나 강요하지 않으니 부담 없이 원하는 만큼 탐구하시면 됩니다.
+                            네, 기독교 신학에 흥미가 있으되 기독교 신앙인이 아닌 분들, 그리고 기독교 신학에 흥미가 있는 종교인 분들 모두 환영합니다.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span><i class="fa-solid fa-circle-question" style="color: var(--accent); margin-right: 8px;"></i> 시험이나 과제가 과도한가요?</span>
+                        <i class="fa-solid fa-chevron-down chevron"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            지식을 평가하는 시험이나 과제는 없습니다. 매주 정해진 책의 분량을 꾸준히 읽어오시는 것만으로 충분합니다.
                         </div>
                     </div>
                 </div>
@@ -843,7 +936,7 @@
         </div>
     </section>
 
-    <!-- 5. 수강 신청 섹션 (yhmhsem@gmail.com 반영) -->
+    <!-- 5. 수강 신청 섹션 -->
     <section id="register" class="register-section bg-grid-pattern">
         <div class="container">
             <div class="register-banner">
@@ -868,7 +961,6 @@
                     </div>
                     
                     <div>
-                        <!-- 이메일 주소 yhmhsem@gmail.com 반영 -->
                         <a href="mailto:yhmhsem@gmail.com" class="btn-primary">
                             <i class="fa-solid fa-paper-plane"></i> 13개월 과정 수강 신청하기
                         </a>
