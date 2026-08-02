@@ -239,6 +239,18 @@
             border-radius: var(--radius);
             padding: 40px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .about-card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
         }
 
         .about-card p {
@@ -348,7 +360,7 @@
             margin-bottom: 0;
         }
 
-        /* ----- 3. 13개월 커리큘럼 커스텀 섹션 ----- */
+        /* ----- 3. 13개월 커리큘럼 섹션 ----- */
         .syllabus-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
@@ -399,7 +411,7 @@
             font-size: 1.2rem;
         }
 
-        /* ----- 4. 자주 묻는 질문 섹션 (3대 원칙 통합) ----- */
+        /* ----- 4. 자주 묻는 질문 섹션 ----- */
         .faq-section {
             background-color: var(--bg-white);
         }
@@ -620,6 +632,14 @@
                 height: 280px;
             }
 
+            .about-card {
+                grid-template-columns: 1fr;
+            }
+
+            .about-card-img {
+                order: -1;
+            }
+
             .curriculum-card {
                 grid-template-columns: 1fr;
                 gap: 30px;
@@ -660,8 +680,8 @@
             </button>
             <nav class="nav-links" id="navLinks">
                 <a href="#about">학교 소개</a>
-                <a href="#curriculum">과정 소개</a>
-                <a href="#syllabus">13개월 커리큘럼</a>
+                <a href="#curriculum">과정 개요</a>
+                <a href="#syllabus">13개월 로드맵</a>
                 <a href="#faq">자주 묻는 질문</a>
                 <a href="#register" class="btn-cta-nav">수강 신청</a>
             </nav>
@@ -682,7 +702,7 @@
                         야매신학교는 거창한 인가나 고립된 교리에 갇히지 않고, 신학적 지식이 주는 자유로운 흥미를 모토로 함께 책을 읽고 나눕니다.
                     </p>
                     <a href="#syllabus" class="btn-primary" style="display: inline-flex;">
-                        13개월 커리큘럼 보기 <i class="fa-solid fa-arrow-right"></i>
+                        13개월 로드맵 보기 <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
 
@@ -691,23 +711,28 @@
                 </div>
             </div>
 
+            <!-- 학교 소개 카드 (메인 분위기용 서재 이미지 img/library.jpg 추가 예시) -->
             <div class="about-card">
-                <div class="section-header" style="margin-bottom: 15px;">
-                    <span class="subtitle">About Yahmeh</span>
-                    <h2 class="serif-font">학교 소개</h2>
+                <div>
+                    <div class="section-header" style="margin-bottom: 15px;">
+                        <span class="subtitle">About Yahmeh</span>
+                        <h2 class="serif-font">학교 소개</h2>
+                    </div>
+                    <p>
+                        야매신학교(Yahmeh Seminary)는 <strong>'야훼'(Yahweh)를 뒤집어 명명한 자발적 미인가 신학교</strong>입니다.
+                    </p>
+                    <p>
+                        기독교 신학에 흥미가 있으되 기독교 신앙인은 아닌 분들, 그리고 기독교 신학에 흥미가 있는 종교인 분들을 모두 환영합니다.
+                    </p>
                 </div>
-                <p>
-                    야매신학교(Yahmeh Seminary)는 <strong>'야훼'(Yahweh)를 뒤집어 명명한 자발적 미인가 신학교</strong>입니다.
-                </p>
-                <p>
-                    기독교 신학에 흥미가 있으되 기독교 신앙인은 아닌 분들, 그리고 기독교 신학에 흥미가 있는 종교인 분들을 모두 환영합니다.
-                </p>
+                <!-- 메인에 잘 어울리는 분위기 이미지 (img/library.jpg) -->
+                <img src="img/library.jpg" alt="빈티지 서재 이미지" class="about-card-img" onerror="this.style.display='none'">
             </div>
 
         </div>
     </section>
 
-    <!-- 2. 과정 소개 섹션 -->
+    <!-- 2. 과정 소개 섹션 (Study Overview 반영) -->
     <section id="curriculum" class="curriculum-section">
         <div class="container">
             
@@ -729,7 +754,8 @@
                 
                 <div class="curriculum-content">
                     <div class="section-header">
-                        <span class="subtitle">Curriculum Overview</span>
+                        <!-- 요청된 영문/한글 타이틀 반영 -->
+                        <span class="subtitle">Study Overview</span>
                         <h2 class="serif-font">정규과정 개요</h2>
                     </div>
                     <p>
@@ -744,12 +770,13 @@
         </div>
     </section>
 
-    <!-- 3. 13개월 커리큘럼 섹션 (2개 챕터 = 1달) -->
+    <!-- 3. 13개월 커리큘럼 섹션 (13-Month Plan 반영) -->
     <section id="syllabus" class="principles-section bg-grid-pattern">
         <div class="container">
             <div class="section-header" style="text-align: center; max-width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 50px;">
+                <!-- 요청된 영문/한글 타이틀 반영 -->
                 <span class="subtitle">13-Month Plan</span>
-                <h2 class="serif-font">13개월 정규 커리큘럼</h2>
+                <h2 class="serif-font">13개월 로드맵</h2>
             </div>
 
             <div class="syllabus-grid">
@@ -849,7 +876,7 @@
                     </div>
                 </div>
 
-                <div class="syllabus-card" style="grid-column: span 1;">
+                <div class="syllabus-card">
                     <div class="syllabus-month">Month 13</div>
                     <div class="syllabus-topics">
                         <div class="topic-tag">기독교 윤리</div>
@@ -860,7 +887,7 @@
         </div>
     </section>
 
-    <!-- 4. 자주 묻는 질문 섹션 (3대 원칙 통합) -->
+    <!-- 4. 자주 묻는 질문 섹션 -->
     <section id="faq" class="faq-section">
         <div class="container">
             <div class="section-header" style="text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">
