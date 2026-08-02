@@ -176,17 +176,17 @@
             font-weight: 700;
         }
 
-        /* ----- 1. 학교 소개 섹션 (Hero Split & Large Image Framing) ----- */
+        /* ----- 1. 학교 소개 섹션 ----- */
         .intro-section {
             padding-top: 140px;
         }
 
         .hero-split {
             display: grid;
-            grid-template-columns: 1fr 1.15fr; /* 이미지 가로비율(16:9)을 살려 우측 공간을 살짝 확장 */
-            gap: 45px;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
             align-items: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .hero-text-block h1 {
@@ -198,7 +198,7 @@
         }
 
         .hero-text-block .hero-desc {
-            font-size: 1.08rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
             margin-bottom: 2rem;
             line-height: 1.8;
@@ -217,28 +217,21 @@
             margin-bottom: 1.2rem;
         }
 
-        /* 2752x1536 (16:9) 고화질 이미지 전용 액자 스타일링 */
+        /* 원래 스타일로 원복된 이미지 영역 */
         .hero-image-wrapper {
             position: relative;
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.15);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             border: 1px solid var(--border-color);
-            background-color: var(--primary);
-            aspect-ratio: 16 / 9; /* 2752x1536 원본 비율 유지 */
         }
 
         .hero-image-wrapper img {
             width: 100%;
-            height: 100%;
+            height: 380px;
             object-fit: cover;
-            object-position: center;
             display: block;
             transition: var(--transition);
-        }
-
-        .hero-image-wrapper:hover img {
-            transform: scale(1.02);
         }
 
         .about-card {
@@ -661,6 +654,10 @@
                 font-size: 2rem;
             }
 
+            .hero-image-wrapper img {
+                height: 280px;
+            }
+
             .curriculum-card {
                 grid-template-columns: 1fr;
                 gap: 30px;
@@ -732,9 +729,8 @@
                     </a>
                 </div>
 
-                <!-- 2752x1536 치맥 사제 이미지 영역 (img/junim.png) -->
                 <div class="hero-image-wrapper">
-                    <img src="img/junim.png" alt="서재에서 치킨과 맥주를 즐기는 사제 (야매신학교 메인 비주얼)">
+                    <img src="img/junim.png" alt="야매신학교 메인 비주얼">
                 </div>
             </div>
 
