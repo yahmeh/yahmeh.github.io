@@ -256,7 +256,7 @@
             color: var(--primary);
         }
 
-        /* ----- 2. 과정 소개 섹션 ----- */
+        /* ----- 2. 과정 소개 섹션 (주교재 단독 스타일) ----- */
         .curriculum-section {
             background-color: var(--bg-white);
         }
@@ -267,23 +267,23 @@
             border-radius: var(--radius);
             padding: 45px;
             display: grid;
-            grid-template-columns: 360px 1fr;
+            grid-template-columns: 220px 1fr;
             gap: 45px;
             align-items: center;
         }
 
         .books-wrapper {
             display: flex;
-            gap: 20px;
             justify-content: center;
             perspective: 1000px;
         }
 
         .book-item {
-            flex: 1;
+            width: 100%;
+            max-width: 200px;
             text-align: center;
             background: var(--bg-white);
-            padding: 14px;
+            padding: 16px;
             border-radius: 10px;
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
@@ -311,10 +311,6 @@
             white-space: nowrap;
         }
 
-        .book-badge.alt {
-            background-color: var(--accent);
-        }
-
         .book-item img {
             width: 100%;
             height: auto;
@@ -324,7 +320,7 @@
         }
 
         .book-title {
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             font-weight: 700;
             color: var(--primary);
             margin-top: 12px;
@@ -332,7 +328,7 @@
         }
 
         .book-author {
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
             margin-top: 4px;
         }
@@ -664,7 +660,7 @@
             }
 
             .books-wrapper {
-                max-width: 320px;
+                max-width: 220px;
                 margin: 0 auto;
             }
 
@@ -719,7 +715,6 @@
                     <div class="hero-badge-tag">
                         <i class="fa-solid fa-feather"></i> 자발적 미인가 신학교
                     </div>
-                    <!-- 수정된 헤드라인 -->
                     <h1 class="serif-font">재미로 하는 신학</h1>
                     <p class="hero-desc">
                         야매신학교는 신앙과 별개로, 신학적 지식이 주는 재미를 모토로 책을 읽고 나눕니다.
@@ -751,7 +746,7 @@
         </div>
     </section>
 
-    <!-- 2. 과정 소개 섹션 -->
+    <!-- 2. 과정 소개 섹션 (단독 주교재 구성으로 변경) -->
     <section id="curriculum" class="curriculum-section">
         <div class="container">
             
@@ -762,12 +757,6 @@
                         <img src="img/book.jpg" alt="한 권으로 배우는 신학교 표지">
                         <div class="book-title">한 권으로 배우는 신학교</div>
                         <div class="book-author">알리스터 맥그래스</div>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-badge alt">부교재</span>
-                        <img src="img/book2.jpg" alt="기독교 조직신학 개론 표지">
-                        <div class="book-title">기독교 조직신학 개론</div>
-                        <div class="book-author">다니엘 L. 밀리오리</div>
                     </div>
                 </div>
                 
@@ -780,7 +769,7 @@
                         현재 <strong>13개월에 걸친 정규과정</strong>을 운영하고 있습니다.
                     </p>
                     <p>
-                        알리스터 맥그래스(Alister McGrath)의 <strong>『한 권으로 배우는 신학교』</strong>를 다니엘 L. 밀리오리(Daniel L. Migliore)의 <strong>『기독교 조직신학 개론』</strong>과 더불어 함께 읽어나갑니다.
+                        알리스터 맥그래스(Alister McGrath)의 <strong>『한 권으로 배우는 신학교』</strong>를 중심으로 함께 읽어나갑니다.
                     </p>
                     <p>
                         해당 과정을 수료하면 야매신학교 수료증(Certificate)을 수여합니다. 해당 수료증은 학위가 아니며, 어떠한 실질적 자격도 담보하지 않음을 분명히 합니다.
