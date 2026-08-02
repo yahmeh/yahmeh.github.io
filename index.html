@@ -239,18 +239,6 @@
             border-radius: var(--radius);
             padding: 40px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
-            display: grid;
-            grid-template-columns: 1fr 280px;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .about-card-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
         }
 
         .about-card p {
@@ -550,11 +538,42 @@
             align-items: center;
             gap: 0.6rem;
             white-space: nowrap;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
         }
 
         .btn-primary:hover {
             background-color: #92400e;
             transform: translateY(-2px);
+        }
+
+        /* Toast Message Notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--accent);
+            opacity: 0;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+            z-index: 2000;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
         }
 
         /* ----- Footer ----- */
@@ -593,6 +612,12 @@
         .footer-email {
             color: #cbd5e1;
             font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .footer-email:hover {
+            color: var(--white);
+            text-decoration: underline;
         }
 
         /* ----- Responsive Design ----- */
@@ -632,14 +657,6 @@
                 height: 280px;
             }
 
-            .about-card {
-                grid-template-columns: 1fr;
-            }
-
-            .about-card-img {
-                order: -1;
-            }
-
             .curriculum-card {
                 grid-template-columns: 1fr;
                 gap: 30px;
@@ -662,6 +679,11 @@
 
             .register-banner {
                 padding: 2.5rem 1.5rem;
+            }
+
+            .btn-primary {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -711,28 +733,24 @@
                 </div>
             </div>
 
-            <!-- 학교 소개 카드 (메인 분위기용 서재 이미지 img/library.jpg 추가 예시) -->
+            <!-- 학교 소개 카드 -->
             <div class="about-card">
-                <div>
-                    <div class="section-header" style="margin-bottom: 15px;">
-                        <span class="subtitle">About Yahmeh</span>
-                        <h2 class="serif-font">학교 소개</h2>
-                    </div>
-                    <p>
-                        야매신학교(Yahmeh Seminary)는 <strong>'야훼'(Yahweh)를 뒤집어 명명한 자발적 미인가 신학교</strong>입니다.
-                    </p>
-                    <p>
-                        기독교 신학에 흥미가 있으되 기독교 신앙인은 아닌 분들, 그리고 기독교 신학에 흥미가 있는 종교인 분들을 모두 환영합니다.
-                    </p>
+                <div class="section-header" style="margin-bottom: 15px;">
+                    <span class="subtitle">About Yahmeh</span>
+                    <h2 class="serif-font">학교 소개</h2>
                 </div>
-                <!-- 메인에 잘 어울리는 분위기 이미지 (img/library.jpg) -->
-                <img src="img/library.jpg" alt="빈티지 서재 이미지" class="about-card-img" onerror="this.style.display='none'">
+                <p>
+                    야매신학교(Yahmeh Seminary)는 <strong>'야훼'(Yahweh)를 뒤집어 명명한 자발적 미인가 신학교</strong>입니다.
+                </p>
+                <p>
+                    기독교 신학에 흥미가 있으되 기독교 신앙인은 아닌 분들, 그리고 기독교 신학에 흥미가 있는 종교인 분들을 모두 환영합니다.
+                </p>
             </div>
 
         </div>
     </section>
 
-    <!-- 2. 과정 소개 섹션 (Study Overview 반영) -->
+    <!-- 2. 과정 소개 섹션 -->
     <section id="curriculum" class="curriculum-section">
         <div class="container">
             
@@ -754,7 +772,6 @@
                 
                 <div class="curriculum-content">
                     <div class="section-header">
-                        <!-- 요청된 영문/한글 타이틀 반영 -->
                         <span class="subtitle">Study Overview</span>
                         <h2 class="serif-font">정규과정 개요</h2>
                     </div>
@@ -770,11 +787,10 @@
         </div>
     </section>
 
-    <!-- 3. 13개월 커리큘럼 섹션 (13-Month Plan 반영) -->
+    <!-- 3. 13개월 커리큘럼 섹션 -->
     <section id="syllabus" class="principles-section bg-grid-pattern">
         <div class="container">
             <div class="section-header" style="text-align: center; max-width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 50px;">
-                <!-- 요청된 영문/한글 타이틀 반영 -->
                 <span class="subtitle">13-Month Plan</span>
                 <h2 class="serif-font">13개월 로드맵</h2>
             </div>
@@ -963,22 +979,23 @@
         </div>
     </section>
 
-    <!-- 5. 수강 신청 섹션 -->
+    <!-- 5. 수강 신청 섹션 (이메일 복사 기능 및 문구 수정) -->
     <section id="register" class="register-section bg-grid-pattern">
         <div class="container">
             <div class="register-banner">
                 <div class="register-grid">
                     <div class="register-info">
                         <h3 class="serif-font">13개월 정규과정 수강 신청</h3>
-                        <p>간단한 이메일 문의로 13개월 읽기 모임에 참여해 보세요.</p>
+                        <!-- 요청하신 안내 멘트 반영 -->
+                        <p>아래 버튼을 누르면 이메일 주소가 자동으로 복사되니, 해당 주소로 수강 신청 및 문의 메일을 보내주시기 바랍니다.</p>
                         
                         <div class="steps-mini">
                             <div class="step-mini-item">
-                                <span class="step-mini-num">1</span> 이메일 문의
+                                <span class="step-mini-num">1</span> 버튼 클릭 (주소 복사)
                             </div>
                             <i class="fa-solid fa-angle-right" style="color: rgba(255,255,255,0.3);"></i>
                             <div class="step-mini-item">
-                                <span class="step-mini-num">2</span> 안내 수신
+                                <span class="step-mini-num">2</span> 이메일 발송
                             </div>
                             <i class="fa-solid fa-angle-right" style="color: rgba(255,255,255,0.3);"></i>
                             <div class="step-mini-item">
@@ -988,14 +1005,21 @@
                     </div>
                     
                     <div>
-                        <a href="mailto:yhmhsem@gmail.com" class="btn-primary">
-                            <i class="fa-solid fa-paper-plane"></i> 13개월 과정 수강 신청하기
-                        </a>
+                        <!-- 클릭 시 이메일 복사 JS 실행 버튼 -->
+                        <button type="button" class="btn-primary" id="copyEmailBtn">
+                            <i class="fa-solid fa-copy"></i> 13개월 과정 수강 신청하기
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- 복사 완료 안내 토스트 메시지 -->
+    <div id="toast" class="toast">
+        <i class="fa-solid fa-circle-check" style="color: #34d399;"></i>
+        <span>이메일 주소(yhmhsem@gmail.com)가 복사되었습니다!</span>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -1005,7 +1029,7 @@
                     <img src="img/yhmh_logo.svg" alt="YHMH Logo">
                     <span class="serif-font">야매신학교</span>
                 </div>
-                <div class="footer-email">
+                <div class="footer-email" id="footerEmailCopy">
                     <i class="fa-regular fa-envelope"></i> yhmhsem@gmail.com
                 </div>
                 <div>Yahmeh Seminary &copy; All rights reserved.</div>
@@ -1051,6 +1075,38 @@
                 }
             });
         });
+
+        // Email Copy Functionality & Toast Notification
+        const EMAIL_ADDRESS = 'yhmhsem@gmail.com';
+        const copyEmailBtn = document.getElementById('copyEmailBtn');
+        const footerEmailCopy = document.getElementById('footerEmailCopy');
+        const toast = document.getElementById('toast');
+
+        function copyEmailToClipboard() {
+            navigator.clipboard.writeText(EMAIL_ADDRESS).then(() => {
+                // Show Toast Notification
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3000);
+            }).catch(err => {
+                // Fallback for older browsers
+                const tempInput = document.createElement('input');
+                tempInput.value = EMAIL_ADDRESS;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3000);
+            });
+        }
+
+        copyEmailBtn.addEventListener('click', copyEmailToClipboard);
+        footerEmailCopy.addEventListener('click', copyEmailToClipboard);
     </script>
 </body>
 </html>
