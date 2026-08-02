@@ -176,17 +176,17 @@
             font-weight: 700;
         }
 
-        /* ----- 1. 학교 소개 섹션 ----- */
+        /* ----- 1. 학교 소개 섹션 (Hero Split & Large Image Framing) ----- */
         .intro-section {
             padding-top: 140px;
         }
 
         .hero-split {
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 40px;
+            grid-template-columns: 1fr 1.15fr; /* 이미지 가로비율(16:9)을 살려 우측 공간을 살짝 확장 */
+            gap: 45px;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .hero-text-block h1 {
@@ -198,7 +198,7 @@
         }
 
         .hero-text-block .hero-desc {
-            font-size: 1.1rem;
+            font-size: 1.08rem;
             color: var(--text-muted);
             margin-bottom: 2rem;
             line-height: 1.8;
@@ -217,20 +217,28 @@
             margin-bottom: 1.2rem;
         }
 
+        /* 2752x1536 (16:9) 고화질 이미지 전용 액자 스타일링 */
         .hero-image-wrapper {
             position: relative;
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.15);
             border: 1px solid var(--border-color);
+            background-color: var(--primary);
+            aspect-ratio: 16 / 9; /* 2752x1536 원본 비율 유지 */
         }
 
         .hero-image-wrapper img {
             width: 100%;
-            height: 380px;
+            height: 100%;
             object-fit: cover;
+            object-position: center;
             display: block;
             transition: var(--transition);
+        }
+
+        .hero-image-wrapper:hover img {
+            transform: scale(1.02);
         }
 
         .about-card {
@@ -548,7 +556,7 @@
             transform: translateY(-2px);
         }
 
-        /* Toast Message Notification */
+        /* Toast Notification */
         .toast {
             position: fixed;
             bottom: 30px;
@@ -653,10 +661,6 @@
                 font-size: 2rem;
             }
 
-            .hero-image-wrapper img {
-                height: 280px;
-            }
-
             .curriculum-card {
                 grid-template-columns: 1fr;
                 gap: 30px;
@@ -728,8 +732,9 @@
                     </a>
                 </div>
 
+                <!-- 2752x1536 치맥 사제 이미지 영역 (img/junim.png) -->
                 <div class="hero-image-wrapper">
-                    <img src="img/junim.png" alt="야매신학교 메인 비주얼">
+                    <img src="img/junim.png" alt="서재에서 치킨과 맥주를 즐기는 사제 (야매신학교 메인 비주얼)">
                 </div>
             </div>
 
@@ -979,14 +984,13 @@
         </div>
     </section>
 
-    <!-- 5. 수강 신청 섹션 (이메일 복사 기능 및 문구 수정) -->
+    <!-- 5. 수강 신청 섹션 -->
     <section id="register" class="register-section bg-grid-pattern">
         <div class="container">
             <div class="register-banner">
                 <div class="register-grid">
                     <div class="register-info">
                         <h3 class="serif-font">13개월 정규과정 수강 신청</h3>
-                        <!-- 요청하신 안내 멘트 반영 -->
                         <p>아래 버튼을 누르면 이메일 주소가 자동으로 복사되니, 해당 주소로 수강 신청 및 문의 메일을 보내주시기 바랍니다.</p>
                         
                         <div class="steps-mini">
@@ -1005,7 +1009,6 @@
                     </div>
                     
                     <div>
-                        <!-- 클릭 시 이메일 복사 JS 실행 버튼 -->
                         <button type="button" class="btn-primary" id="copyEmailBtn">
                             <i class="fa-solid fa-copy"></i> 13개월 과정 수강 신청하기
                         </button>
@@ -1015,7 +1018,7 @@
         </div>
     </section>
 
-    <!-- 복사 완료 안내 토스트 메시지 -->
+    <!-- Toast Notification -->
     <div id="toast" class="toast">
         <i class="fa-solid fa-circle-check" style="color: #34d399;"></i>
         <span>이메일 주소(yhmhsem@gmail.com)가 복사되었습니다!</span>
@@ -1084,13 +1087,11 @@
 
         function copyEmailToClipboard() {
             navigator.clipboard.writeText(EMAIL_ADDRESS).then(() => {
-                // Show Toast Notification
                 toast.classList.add('show');
                 setTimeout(() => {
                     toast.classList.remove('show');
                 }, 3000);
             }).catch(err => {
-                // Fallback for older browsers
                 const tempInput = document.createElement('input');
                 tempInput.value = EMAIL_ADDRESS;
                 document.body.appendChild(tempInput);
